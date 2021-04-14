@@ -1,0 +1,347 @@
+mapscripts GraniteCave_1F_MapScripts {
+}
+
+script CrystalCaveBrock {
+	lockall
+	setvar(VAR_ROUTE105_STATE, 9)
+	getplayerxy (VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 26) {
+		special(SpawnCameraObject)
+		applymovement(EVENT_OBJ_ID_CAMERA, CrystalCaveF1_Brock_Camera)
+		waitmovement(0)
+		applymovement(3, CrystalCaveF1_Brock_Exclamation)
+		waitmovement(0)
+		waitse
+		playse(SE_PIN)
+		waitse
+		applymovement(3, CrystalCaveF1_Brock_Move1)
+		applymovement(EVENT_OBJ_ID_CAMERA, CrystalCaveF1_Brock_CameraEnd)
+		waitmovement(3)
+		special(RemoveCameraObject)
+		msgbox("… … … … … … … …\n… … … … … … … …\pOh, so you're {PLAYER}? My apologies.\nI mistook you for someone else.\pI'm BROCK, LEADER of the PEWTER CITY\nPOKéMON GYM.\pI am looking for the legendary\nCRYSTAL ONIX in here.\pYou can join me, but if it comes\ndown to it, I will battle you for it.\pWhat do you say, {PLAYER}?", MSGBOX_YESNO)
+		if (var(VAR_RESULT) == 0) {
+			msgbox("No sweat, then!\nI am heading deeper into the cave\lin case you change your mind.", MSGBOX_AUTOCLOSE)
+			applymovement(3, CrystalCaveF1_Brock_Move2)
+			waitmovement(0)	
+			removeobject(3)
+			setflag(FLAG_UNUSED_0x02F)
+			releaseall
+			end
+		}
+	msgbox("Alright, then!\nIt should be far deeper into the cave.\pKeep up if you can!", MSGBOX_AUTOCLOSE)
+	applymovement(3, CrystalCaveF1_Brock_Move2)
+	waitmovement(0)	
+	removeobject(3)
+	setflag(FLAG_UNUSED_0x02F)
+	releaseall
+	end
+	}
+	if (var(VAR_TEMP_1) == 27) {
+		special(SpawnCameraObject)
+		applymovement(EVENT_OBJ_ID_CAMERA, CrystalCaveF1_Brock_Camera_1)
+		waitmovement(0)
+		applymovement(3, CrystalCaveF1_Brock_Exclamation)
+		waitmovement(0)
+		waitse
+		playse(SE_PIN)
+		waitse
+		applymovement(3, CrystalCaveF1_Brock_Move1_1)
+		applymovement(EVENT_OBJ_ID_CAMERA, CrystalCaveF1_Brock_CameraEnd_1)
+		waitmovement(3)
+		special(RemoveCameraObject)
+		msgbox("… … … … … … … …\n… … … … … … … …\pOh, so you're {PLAYER}? My apologies.\nI mistook you for someone else.\pI'm BROCK, LEADER of the PEWTER CITY\nPOKéMON GYM.\pI am looking for the legendary\nCRYSTAL ONIX in here.\pYou can join me, but if it comes\ndown to it, I will battle you for it.\pWhat do you say, {PLAYER}?", MSGBOX_YESNO)
+		if (var(VAR_RESULT) == 0) {
+			msgbox("No sweat, then!\nI am heading deeper into the cave\lin case you change your mind.", MSGBOX_AUTOCLOSE)
+			applymovement(3, CrystalCaveF1_Brock_Move2)
+			waitmovement(0)	
+			removeobject(3)
+			setflag(FLAG_UNUSED_0x02F)
+			releaseall
+			end
+		}
+	msgbox("Alright, then!\nIt should be far deeper into the cave.\pKeep up if you can!", MSGBOX_AUTOCLOSE)
+	applymovement(3, CrystalCaveF1_Brock_Move2)
+	waitmovement(0)	
+	removeobject(3)
+	setflag(FLAG_UNUSED_0x02F)
+	releaseall
+	end
+	}
+	if (var(VAR_TEMP_1) == 28) {
+		special(SpawnCameraObject)
+		applymovement(EVENT_OBJ_ID_CAMERA, CrystalCaveF1_Brock_Camera_2)
+		waitmovement(0)
+		applymovement(3, CrystalCaveF1_Brock_Exclamation)
+		waitmovement(0)
+		waitse
+		playse(SE_PIN)
+		waitse
+		applymovement(3, CrystalCaveF1_Brock_Move1_2)
+		applymovement(EVENT_OBJ_ID_CAMERA, CrystalCaveF1_Brock_CameraEnd_2)
+		waitmovement(3)
+		special(RemoveCameraObject)
+		msgbox("… … … … … … … …\n… … … … … … … …\pOh, so you're {PLAYER}? My apologies.\nI mistook you for someone else.\pI'm BROCK, LEADER of the PEWTER CITY\nPOKéMON GYM.\pI am looking for the legendary\nCRYSTAL ONIX in here.\pYou can join me, but if it comes\ndown to it, I will battle you for it.\pWhat do you say, {PLAYER}?", MSGBOX_YESNO)
+		if (var(VAR_RESULT) == 0) {
+			msgbox("No sweat, then!\nI am heading deeper into the cave\lin case you change your mind.", MSGBOX_AUTOCLOSE)
+			applymovement(3, CrystalCaveF1_Brock_Move2)
+			waitmovement(0)	
+			removeobject(3)
+			setflag(FLAG_UNUSED_0x02F)
+			releaseall
+			end
+		}
+	msgbox("Alright, then!\nIt should be far deeper into the cave.\pKeep up if you can!", MSGBOX_AUTOCLOSE)
+	applymovement(3, CrystalCaveF1_Brock_Move2)
+	waitmovement(0)
+	removeobject(3)
+	setflag(FLAG_UNUSED_0x02F)	
+	releaseall
+	end
+	}
+}
+
+movement CrystalCaveF1_Brock_Exclamation {
+	face_down
+	emote_exclamation_mark
+	step_end
+}
+
+movement CrystalCaveF1_Brock_Camera {
+	walk_right * 2
+	step_end
+}
+
+movement CrystalCaveF1_Brock_CameraEnd {
+	delay_16
+	delay_16
+	walk_left * 2
+	step_end
+}
+
+movement CrystalCaveF1_Brock_Move1 {
+	walk_down * 2
+	walk_left * 6
+	step_end
+}
+
+movement CrystalCaveF1_Brock_Move2 {
+	walk_right * 7
+	step_end
+}
+
+movement CrystalCaveF1_Brock_Camera_1 {
+	walk_right * 2
+	walk_up
+	step_end
+}
+
+movement CrystalCaveF1_Brock_CameraEnd_1 {
+	delay_16
+	delay_16
+	walk_down
+	walk_left * 2
+	step_end
+}
+
+movement CrystalCaveF1_Brock_Move1_1 {
+	walk_down * 3
+	walk_left * 6
+	step_end
+}
+
+movement CrystalCaveF1_Brock_Camera_2 {
+	walk_right * 2
+	walk_up * 2
+	step_end
+}
+
+movement CrystalCaveF1_Brock_CameraEnd_2 {
+	delay_16
+	delay_16
+	walk_down * 2
+	walk_left * 2
+	step_end
+}
+
+movement CrystalCaveF1_Brock_Move1_2 {
+	walk_down * 4
+	walk_left * 6
+	step_end
+}
+
+script CrystalCaveBrice {
+	trainerbattle_single(TRAINER_BRICE, Route112_Text_BriceIntro, Route112_Text_BriceDefeat, Route112_Brice_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route112_Brice_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route112_Brice_CheckMatchCall2)
+	}
+	msgbox(Route112_Text_BricePostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+
+
+
+script Route112_Brice_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route112_Brice_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route112_Brice_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_BRICE)
+	release
+	end
+}
+
+script Route112_Brice_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route112_Brice_RegisterMatchCall)
+	}
+	msgbox(Route112_Text_BricePostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route112_Brice_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_BRICE)
+	release
+	end
+}
+
+script Route112_Brice_Rematch {
+	trainerbattle_rematch(TRAINER_BRICE, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+
+
+
+
+
+
+script CrystalCaveBryan {
+	trainerbattle_single(TRAINER_BRYAN, Route111_Text_BryanIntro, Route111_Text_BryanDefeat, Route111_Bryan_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route111_Bryan_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route111_Bryan_CheckMatchCall2)
+	}
+	msgbox(Route111_Text_BryanPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route111_Bryan_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route111_Bryan_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route111_Bryan_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_BRYAN)
+	release
+	end
+}
+
+script Route111_Bryan_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route111_Bryan_RegisterMatchCall)
+	}
+	msgbox(Route111_Text_BryanPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route111_Bryan_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_BRYAN)
+	release
+	end
+}
+
+script Route111_Bryan_Rematch {
+	trainerbattle_rematch(TRAINER_BRYAN, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+
+
+
+script CrystalCaveCale {
+	trainerbattle_single(TRAINER_CALE, Route121_Text_CaleIntro, Route121_Text_CaleDefeat, Route121_Cale_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route121_Cale_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route121_Cale_CheckMatchCall2)
+	}
+	msgbox(Route121_Text_CalePostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route121_Cale_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route121_Cale_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route121_Cale_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_CALE)
+	release
+	end
+}
+
+script Route121_Cale_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route121_Cale_RegisterMatchCall)
+	}
+	msgbox(Route121_Text_CalePostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route121_Cale_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_CALE)
+	release
+	end
+}
+
+script Route121_Cale_Rematch {
+	trainerbattle_rematch(TRAINER_CALE, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}

@@ -1,0 +1,153 @@
+mapscripts OldaleTown_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+    }
+}
+
+script OldaleTownGirl {
+    lock
+	faceplayer
+	msgbox("There are lots of TRAINERS on\nROUTE 50.\pThey all plan on taking on the\nORANGE CREW.", MSGBOX_AUTOCLOSE) 
+	release
+}
+
+script OldaleTownBoy {
+    lock
+	faceplayer
+	msgbox("Have you checked the POKéMON MART\nout yet?\pI heard they finally restocked their\nsupply of POKé BALLS recently.", MSGBOX_AUTOCLOSE)
+	release
+}
+
+script TangeloIslandSign {
+    lock
+	msgbox("TANGELO ISLAND\nThe Bell Tolls for a Bright Future", MSGBOX_SIGN)
+	release
+}
+
+script TangeloIslandPortSign {
+    lock
+	msgbox("TANGELO ISLAND PORT", MSGBOX_SIGN)
+	release
+}
+
+script TangeloCenterSign {
+    lock
+	msgbox("TANGELO CENTER", MSGBOX_SIGN)
+	release
+}
+
+script TangeloIslandTracey {
+    lock
+	faceplayer
+	if (flag(FLAG_GS_BALL_TRACEY) == TRUE) {
+		if(flag(FLAG_GS_BALL_IVY) == TRUE) {
+			msgbox("So, you delivered it?\pWhat? You're taking on the\nORANGE CREW?\pThat's really interesting.\pSay, why don't we have a battle?\nI'm kinda strong!", MSGBOX_AUTOCLOSE)
+			trainerbattle_no_intro(TRAINER_MAY_1, TraceyLostText)
+			msgbox("Say, why don't you take this\nLAPRAS?\pIt was separated from its family,\nand needs a good TRAINER.\pOh, how rude!\nThe name is TRACEY.\lI'm a POKéMON WATCHER.\pAnyway, I must be off.\nSee you around!", MSGBOX_AUTOCLOSE)
+			applymovement(EVENT_OBJ_ID_PLAYER, TangeloIslandPlayerMove1)
+			waitmovement(0)			
+			applymovement(3, TangeloIslandTraceyMove1)
+			waitmovement(0)
+			removeobject(3)
+			setflag(FLAG_GS_BALL_TRACEY2)
+			release
+			end
+		}
+		msgbox("Could you please deliver that\nGS BALL to her for me?", MSGBOX_AUTOCLOSE)
+		release
+		end
+	}
+	msgbox("This poor LAPRAS was washed up\non ROUTE 50. I saved it.\p… … … … … … … …\n… … … … … … … …\pWhat's that? You are from\nVALENCIA?\pI see. I was on my way there to\ndeliver something to PROF. IVY\lfor a friend.\pDo you think you could deliver it\nfor me?", MSGBOX_DEFAULT)
+	giveitem_std(ITEM_DEVON_GOODS, 1, 0)
+	setflag(FLAG_GS_BALL_TRACEY)
+	release
+	end
+}
+
+text TraceyLostText {
+	"Wow, you might have a chance!"
+}
+
+movement TangeloIslandPlayerMove1 {
+	walk_down
+	walk_right
+	face_left
+	step_end
+}
+
+movement TangeloIslandTraceyMove1 {
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+}
+
+script TangeloIslandLapras {
+	lockall
+	playmoncry(SPECIES_WEAK_LAPRAS, 0)
+	msgbox("The LAPRAS seems eager to\njoin you.\pTake LAPRAS?", MSGBOX_YESNO)
+	waitmoncry
+	if (var(VAR_RESULT) == 0) {
+		msgbox("{PLAYER} left the LAPRAS where it was.", MSGBOX_AUTOCLOSE)
+		releaseall
+		end
+	}
+	setvar(VAR_ROUTE105_STATE, 5)
+	setvar(VAR_TEMP_1, SPECIES_WEAK_LAPRAS)
+	givemon(SPECIES_WEAK_LAPRAS, 5, ITEM_NONE)
+	if(var(VAR_RESULT) == 0) {
+		bufferspeciesname(1, SPECIES_WEAK_LAPRAS)
+		removeobject(4)
+		playfanfare(MUS_FANFA5)
+		message(ObtainedLapras)
+		waitmessage
+		waitfanfare
+		bufferspeciesname(0, SPECIES_WEAK_LAPRAS)
+		msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == 0) {
+			setflag(FLAG_TANGELO_LAPRAS)
+			releaseall
+			end		
+		}		
+		call(Common_EventScript_GetGiftMonPartySlot)
+		call(Common_EventScript_NameReceivedPartyMon)
+		releaseall
+		end	
+	}
+	if(var(VAR_RESULT) == 1) {
+		bufferspeciesname(1, SPECIES_WEAK_LAPRAS)
+		removeobject(4)
+		playfanfare(MUS_FANFA5)
+		message(ObtainedLapras)
+		waitmessage
+		waitfanfare
+		bufferspeciesname(0, SPECIES_WEAK_LAPRAS)
+		msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == 0) {
+			call(Common_EventScript_TransferredToPC)
+			setflag(FLAG_TANGELO_LAPRAS)
+			releaseall
+			end		
+		}
+		call(Common_EventScript_NameReceivedBoxMon)
+		call(Common_EventScript_TransferredToPC)
+		setflag(FLAG_TANGELO_LAPRAS)
+		releaseall
+		end
+	}
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	end
+}
+
+text ObtainedLapras {
+	"{PLAYER} obtained a LAPRAS!"
+}

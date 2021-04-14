@@ -1,0 +1,81 @@
+{
+    "allow_bike": false,
+    "allow_escape_rope": false,
+    "allow_running": false,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "bg_events": [
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "RustboroCity_PokemonSchool_EventScript_Blackboard",
+            "type": "sign",
+            "x": 4,
+            "y": 1
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "RustboroCity_PokemonSchool_EventScript_Blackboard",
+            "type": "sign",
+            "x": 5,
+            "y": 1
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "MikanSchoolNotebook",
+            "type": "sign",
+            "x": 4,
+            "y": 4
+        }
+    ],
+    "connections": null,
+    "coord_events": [
+    ],
+    "id": "MAP_PETALBURG_CITY_WALLYS_HOUSE",
+    "layout": "LAYOUT_RUSTBORO_CITY_POKEMON_SCHOOL",
+    "map_type": "MAP_TYPE_INDOOR",
+    "music": "MUS_P_SCHOOL",
+    "name": "PetalburgCity_WallysHouse",
+    "object_events": [
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_YOUNGSTER",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_UP",
+            "script": "MikanSchoolStudent",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 4,
+            "y": 5
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_WOMAN_2",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+            "script": "MikanSchoolTeacher",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 6,
+            "y": 2
+        }
+    ],
+    "region_map_section": "MAPSEC_PETALBURG_CITY",
+    "requires_flash": false,
+    "show_map_name": false,
+    "warp_events": [
+        {
+            "dest_map": "MAP_PETALBURG_CITY",
+            "dest_warp_id": 7,
+            "elevation": 0,
+            "x": 4,
+            "y": 7
+        }
+    ],
+    "weather": "WEATHER_NONE"
+}

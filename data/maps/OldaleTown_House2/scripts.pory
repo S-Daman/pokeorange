@@ -1,0 +1,18 @@
+mapscripts OldaleTown_House2_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+    }
+}
+
+script OldaleTownHouse2Girl {
+    lock
+	faceplayer
+	msgbox("There are several islands that\nhave not been explored yet.\pSome just aren't habitable, while\nothers are protected so WILD POKéMON\lcan live freely.", MSGBOX_AUTOCLOSE) 
+	release
+}
+
+script OldaleTownHouse2Boy {
+    lock
+	faceplayer
+	msgbox("The ORANGE ARCHIPELAGO consists of\nseventeen islands in total.\pOf course, this number just accounts for\nthe more populated hub islands.", MSGBOX_AUTOCLOSE) 
+	release
+}

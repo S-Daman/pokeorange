@@ -1,0 +1,522 @@
+mapscripts Route103_MapScripts {
+}
+
+script Route51Sign {
+    lock
+	msgbox("ROUTE 51\n{LEFT_ARROW} MIKAN ISLAND", MSGBOX_SIGN)
+	release
+}
+
+script Route51Sign1 {
+    lock
+	msgbox("ROUTE 51\n{UP_ARROW} MANDARIN ISLAND NORTH", MSGBOX_SIGN)
+	release
+}
+
+script Route51Sign2 {
+    lock
+	msgbox("ROUTE 51\n{DOWN_ARROW} SUNBURST ISLAND", MSGBOX_SIGN)
+	release
+}
+
+script Route51TrainerTips {
+    lock
+	msgbox("TRAINER TIPS\pNo stealing other people's POKéMON!\pPOKé BALLS are meant to be thrown\nonly at wild POKéMON!", MSGBOX_SIGN)
+	release
+}
+
+
+script Tracey51 {
+	if(flag(FLAG_BADGE01_GET)) {
+		applymovement(EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight)
+		waitmovement(0)
+		setvar(VAR_ROUTE105_STATE, 7)
+		getplayerxy (VAR_TEMP_0, VAR_TEMP_1)
+		if (var(VAR_TEMP_1) == 47) {
+			applymovement(1, Route51_Tracey_Move_1_1)
+			applymovement(EVENT_OBJ_ID_PLAYER, SurprisedToSeeTraceyRoute510)
+			waitmovement(EVENT_OBJ_ID_PLAYER)
+			waitse
+			playse(SE_PIN)
+			waitse
+			waitmovement(1)
+			delay(10)
+			msgbox("Oh, {PLAYER}!\pHave you been taking good care of\nthat LAPRAS?\pOh, the GYM BADGE you have there shows\nyou are doing a good job training it.\pI just remembered!\pI wanted you to have this.", MSGBOX_DEFAULT)
+			giveitem_std(ITEM_HM03, 1, 0)
+			msgbox("It was stuck to LAPRAS' body, so\nI took it off since it was injured.\pIt looks like a HIDDEN MACHINE, but\nI am not sure which move it contains.\pHM moves are unique moves that can be\nused by POKéMON outside of battle.\pI hope it contains SURF because you\nreally need it to traverse around\lthese seas.\p… … … … … … … …\n… … … … … … … …\pSee you around, {PLAYER}!", MSGBOX_DEFAULT)
+			closemessage
+			delay(4)
+			applymovement(EVENT_OBJ_ID_PLAYER, SurprisedToSeeTraceyRoute51_1)
+			applymovement(1, Route51_Tracey_Move_2_1)
+			waitmovement(1)
+			removeobject(1)				
+			release
+			end
+		}
+		if (var(VAR_TEMP_1) == 48) {
+			applymovement(1, Route51_Tracey_Move_1_2)
+			applymovement(EVENT_OBJ_ID_PLAYER, SurprisedToSeeTraceyRoute51)
+			waitmovement(EVENT_OBJ_ID_PLAYER)
+			waitse
+			playse(SE_PIN)
+			waitse
+			waitmovement(1)
+			delay(10)
+			msgbox("Oh, {PLAYER}!\pHave you been taking good care of\nthat LAPRAS?\pOh, the GYM BADGE you have there shows\nyou are doing a good job training it.\pI just remembered!\pI wanted you to have this.", MSGBOX_DEFAULT)
+			giveitem_std(ITEM_HM03, 1, 0)
+			msgbox("It was stuck to LAPRAS' body, so\nI took it off since it was injured.\pIt looks like a HIDDEN MACHINE, but\nI am not sure which move it contains.\pHM moves are unique moves that can be\nused by POKéMON outside of battle.\pI hope it contains SURF because you\nreally need it to traverse around\lthese seas.\p… … … … … … … …\n… … … … … … … …\pSee you around, {PLAYER}!", MSGBOX_DEFAULT)
+			closemessage
+			delay(4)
+			applymovement(EVENT_OBJ_ID_PLAYER, SurprisedToSeeTraceyRoute51_1)
+			applymovement(1, Route51_Tracey_Move_2_2)
+			waitmovement(1)
+			removeobject(1)		
+			release
+			end
+		}
+		if (var(VAR_TEMP_1) == 49) {
+			applymovement(1, Route51_Tracey_Move_1_3)
+			applymovement(EVENT_OBJ_ID_PLAYER, SurprisedToSeeTraceyRoute51)
+			waitmovement(EVENT_OBJ_ID_PLAYER)
+			waitse
+			playse(SE_PIN)
+			waitse
+			waitmovement(1)
+			delay(10)
+			msgbox("Oh, {PLAYER}!\pHave you been taking good care of\nthat LAPRAS?\pOh, the GYM BADGE you have there shows\nyou are doing a good job training it.\pI just remembered!\pI wanted you to have this.", MSGBOX_DEFAULT)
+			giveitem_std(ITEM_HM03, 1, 0)
+			msgbox("It was stuck to LAPRAS' body, so\nI took it off since it was injured.\pIt looks like a HIDDEN MACHINE, but\nI am not sure which move it contains.\pHM moves are unique moves that can be\nused by POKéMON outside of battle.\pI hope it contains SURF because you\nreally need it to traverse around\lthese seas.\p… … … … … … … …\n… … … … … … … …\pSee you around, {PLAYER}!", MSGBOX_DEFAULT)
+			closemessage
+			delay(4)
+			applymovement(EVENT_OBJ_ID_PLAYER, SurprisedToSeeTraceyRoute51_2)
+			applymovement(1, Route51_Tracey_Move_2_3)
+			waitmovement(1)
+			removeobject(1)		
+			release
+			end
+		}
+		release
+		end
+	}
+	release
+	end
+}	
+
+movement SurprisedToSeeTraceyRoute51 {
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	emote_exclamation_mark
+	step_end
+}
+
+movement SurprisedToSeeTraceyRoute510 {
+	delay_16
+	delay_16
+	delay_16
+	emote_exclamation_mark
+	step_end
+}
+
+movement SurprisedToSeeTraceyRoute51_1 {
+	delay_8
+	delay_8
+	delay_8
+	face_left
+	step_end
+}
+
+movement SurprisedToSeeTraceyRoute51_2 {
+	delay_8
+	delay_8
+	delay_8
+	face_left
+	step_end
+}
+
+movement Route51_Tracey_Move_1_1 {
+	walk_left * 4
+	walk_up * 2
+	walk_left
+	step_end
+}
+
+movement Route51_Tracey_Move_1_2 {
+	walk_left * 4
+	walk_up
+	walk_left
+	step_end
+}
+
+movement Route51_Tracey_Move_1_3 {
+	walk_left * 5
+	step_end
+}
+
+movement Route51_Tracey_Move_2_1 {
+	walk_down
+	walk_left * 9
+	step_end
+}
+
+movement Route51_Tracey_Move_2_2 {
+	walk_down
+	walk_left * 9
+	step_end
+}
+
+movement Route51_Tracey_Move_2_3 {
+	walk_up
+	walk_left * 9
+	step_end
+}
+
+
+
+script Route51YoungsterDuncan {
+	trainerbattle_single(TRAINER_LUIS, Route105_Text_LuisIntro, Route105_Text_LuisDefeated, Route105_Luis_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route105_Luis_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route105_Luis_CheckMatchCall2)
+	}
+	msgbox(Route105_Text_LuisPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route105_Luis_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route105_Luis_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route105_Luis_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_LUIS)
+	release
+	end
+}
+
+script Route105_Luis_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route105_Luis_RegisterMatchCall)
+	}
+	msgbox(Route105_Text_LuisPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route105_Luis_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_LUIS)
+	release
+	end
+}
+
+script Route105_Luis_Rematch {
+	trainerbattle_rematch(TRAINER_LUIS, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+
+
+
+script Route51YoungsterLola {
+	trainerbattle_single(TRAINER_KYLA, Route106_Text_KylaIntro, Route106_Text_KylaDefeated, Route106_Kyla_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route106_Kyla_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route106_Kyla_CheckMatchCall2)
+	}
+	msgbox(Route106_Text_KylaPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route106_Kyla_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route106_Kyla_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route106_Kyla_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_KYLA)
+	release
+	end
+}
+
+script Route106_Kyla_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route106_Kyla_RegisterMatchCall)
+	}
+	msgbox(Route106_Text_KylaPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route106_Kyla_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_KYLA)
+	release
+	end
+}
+
+script Route106_Kyla_Rematch {
+	trainerbattle_rematch(TRAINER_KYLA, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+
+
+
+
+script Route51YoungsterSally {
+	trainerbattle_single(TRAINER_IMANI, Route105_Text_ImaniIntro, Route105_Text_ImaniDefeated, Route105_Imani_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route105_Imani_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route105_Imani_CheckMatchCall2)
+	}
+	msgbox(Route105_Text_ImaniPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route105_Imani_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route105_Imani_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route105_Imani_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_IMANI)
+	release
+	end
+}
+
+script Route105_Imani_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route105_Imani_RegisterMatchCall)
+	}
+	msgbox(Route105_Text_ImaniPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route105_Imani_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_IMANI)
+	release
+	end
+}
+
+script Route105_Imani_Rematch {
+	trainerbattle_rematch(TRAINER_IMANI, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+
+
+
+script Route51YoungsterFranklin {
+	trainerbattle_single(TRAINER_DOMINIK, Route105_Text_DominikIntro, Route105_Text_DominikDefeated, Route105_Dominik_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route105_Dominik_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route105_Dominik_CheckMatchCall2)
+	}
+	msgbox(Route105_Text_DominikPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route105_Dominik_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route105_Dominik_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route105_Dominik_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_DOMINIK)
+	release
+	end
+}
+
+script Route105_Dominik_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route105_Dominik_RegisterMatchCall)
+	}
+	msgbox(Route105_Text_DominikPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route105_Dominik_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_DOMINIK)
+	release
+	end
+}
+
+script Route105_Dominik_Rematch {
+	trainerbattle_rematch(TRAINER_DOMINIK, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+
+
+
+script Route51YoungsterEmily {
+	trainerbattle_single(TRAINER_JANICE, Route116_Text_JaniceIntro, Route116_Text_JaniceDefeat, Route116_Janice_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route116_Janice_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route116_Janice_CheckMatchCall2)
+	}
+	msgbox(Route116_Text_JanicePostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route116_Janice_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route116_Janice_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route116_Janice_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_JANICE)
+	release
+	end
+}
+
+script Route116_Janice_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route116_Janice_RegisterMatchCall)
+	}
+	msgbox(Route116_Text_JanicePostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route116_Janice_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_JANICE)
+	release
+	end
+}
+
+script Route116_Janice_Rematch {
+	trainerbattle_rematch(TRAINER_JANICE, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+
+
+
+script Route51YoungsterAndrew {
+	trainerbattle_single(TRAINER_ANDREW, Route103_Text_AndrewIntro, Route103_Text_AndrewDefeated, Route103_Andrew_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route103_Andrew_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route103_Andrew_CheckMatchCall2)
+	}
+	msgbox(Route103_Text_AndrewPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route103_Andrew_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route103_Andrew_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route103_Andrew_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_ANDREW)
+	release
+	end
+}
+
+script Route103_Andrew_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route103_Andrew_RegisterMatchCall)
+	}
+	msgbox(Route103_Text_AndrewPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route103_Andrew_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_ANDREW)
+	release
+	end
+}
+
+script Route103_Andrew_Rematch {
+	trainerbattle_rematch(TRAINER_ANDREW, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}

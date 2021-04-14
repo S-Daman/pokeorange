@@ -1,0 +1,741 @@
+mapscripts RocketWarehouseMandarin_MapScripts {
+}
+
+
+script MandarinWarehouse1F_Warp {
+	lock
+	warpteleport(MAP_ROCKET_WAREHOUSE_MANDARIN, 255, 1, 13)
+	waitstate
+	release
+	end
+}
+
+script MandarinWarehouse1F_Carr {
+	lock
+	getplayerxy (VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 21) {
+		applymovement(EVENT_OBJ_ID_PLAYER, CarrScriptPlayerMove1)
+		applymovement(1, CarrMove1)
+		waitmovement(1)
+		playbgm(MUS_MGM0, 1)
+		msgbox(MandarinWarehouse1F_CarrIntro, MSGBOX_AUTOCLOSE)
+		trainerbattle_no_intro(TRAINER_TABITHA_1, MandarinWarehouse1F_CarrDefeat)
+		msgbox(MandarinWarehouse1F_CarrPost, MSGBOX_AUTOCLOSE)
+	}
+	if (var(VAR_TEMP_0) == 20) {
+		applymovement(EVENT_OBJ_ID_PLAYER, CarrScriptPlayerMove2)
+		applymovement(1, CarrMove2)
+		waitmovement(1)
+		playbgm(MUS_MGM0, 1)
+		msgbox(MandarinWarehouse1F_CarrIntro, MSGBOX_AUTOCLOSE)
+		trainerbattle_no_intro(TRAINER_TABITHA_1, MandarinWarehouse1F_CarrDefeat)
+		msgbox(MandarinWarehouse1F_CarrPost, MSGBOX_AUTOCLOSE)
+	}
+	if (var(VAR_TEMP_0) == 19) {
+		applymovement(EVENT_OBJ_ID_PLAYER, CarrScriptPlayerMove3)
+		applymovement(1, CarrMove3)
+		waitmovement(1)
+		playbgm(MUS_MGM0, 1)
+		msgbox(MandarinWarehouse1F_CarrIntro, MSGBOX_AUTOCLOSE)
+		trainerbattle_no_intro(TRAINER_TABITHA_1, MandarinWarehouse1F_CarrDefeat)
+		msgbox(MandarinWarehouse1F_CarrPost, MSGBOX_AUTOCLOSE)
+	}
+	fadedefaultbgm
+	fadescreen(1)
+	removeobject(1)
+	removeobject(2)
+	setflag(FLAG_HIDE_CARR_1F)
+	setflag(FLAG_HIDE_SCIENTIST_1F)
+	setvar(VAR_ROUTE105_STATE, 8)
+	fadescreen(0)
+	release
+	end
+}
+
+movement CarrMove1 {
+	delay_4
+	delay_4
+	walk_down *2
+	walk_right *2
+	step_end
+}
+
+movement CarrScriptPlayerMove1 {
+	walk_left *2
+	step_end
+}
+
+movement CarrMove2 {
+	delay_4
+	walk_down *2
+	walk_right *2
+	step_end
+}
+
+movement CarrScriptPlayerMove2 {
+	walk_left
+	walk_up
+	face_left
+	step_end
+}
+
+movement CarrMove3 {
+	walk_down *2
+	walk_right *2
+	step_end
+}
+
+movement CarrScriptPlayerMove3 {
+	walk_up
+	face_left
+	step_end
+}
+
+text MandarinWarehouse1F_CarrIntro {
+	"Oh, hey, so you made it.\n"
+	"Didn't you read the sign outside?\p"
+	"Sorry, but I'm gonna have to get rid\n"
+	"of you, brat.\p"
+	"We can't have us, NEO TEAM ROCKET,\n"
+	"meddled by a kid, too!$"
+}
+
+text MandarinWarehouse1F_CarrDefeat {
+	"No way!\n"
+	"What is wrong with kids these days?!$"
+}
+
+text MandarinWarehouse1F_CarrPost {
+	"You may have won this time, but\n"
+	"next time won't be so easy, kid.\p"
+	"TEAM ROCKET's reign is back, and you\n"
+	"haven't seen the last of us!$"
+}
+
+
+
+
+script MandarinWarehouse1F_Grunt {
+	trainerbattle_single(TRAINER_GRUNT_PETALBURG_WOODS, MandarinWarehouse1F_GruntIntro, MandarinWarehouse1F_GruntDefeat)
+	msgbox(MandarinWarehouse1F_GruntPost, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+
+text MandarinWarehouse1F_GruntIntro {
+	"Hey, this is a private facility!\n"
+	"You can't be around here!$"
+}
+
+text MandarinWarehouse1F_GruntDefeat {
+	"Please just scram already!$"
+}
+
+text MandarinWarehouse1F_GruntPost {
+	"It took me a while to design those\n"
+	"ramp panels, but looks like they work\l"
+	"flawlessly now.$"
+}
+
+
+script MandarinWarehouse1F_Elevator {
+	lock
+	msgbox("No!\nIt needs a CARD KEY!", MSGBOX_AUTOCLOSE)
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script MandarinWarehouse1F_Spin1 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera)
+	playse(SE_W081)
+	
+    waitmovement(0)
+	release
+	end
+}
+
+movement lodamera {
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+}
+
+
+script MandarinWarehouse1F_Spin2 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera2)
+	playse(SE_W081)
+	
+    waitmovement(0)
+	release
+	end
+}
+
+movement lodamera2 {
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_down
+	
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+}
+
+script MandarinWarehouse1F_Spin3 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera3)
+	playse(SE_W081)
+	
+    waitmovement(0)
+	release
+	end
+}
+
+movement lodamera3 {
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_right
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+}
+
+
+script MandarinWarehouse1F_Spin4 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera4)
+	playse(SE_W081)
+	
+    waitmovement(0)
+	release
+	end
+}
+
+movement lodamera4 {
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+}
+
+script MandarinWarehouse1F_Spin5 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera5)
+	playse(SE_W081)
+	
+    waitmovement(0)
+	release
+	end
+}
+
+movement lodamera5 {
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+}
+
+
+script MandarinWarehouse1F_Spin6 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera6)
+	playse(SE_W081)
+	
+    waitmovement(0)
+	release
+	end
+}
+
+movement lodamera6 {
+	walk_fastest_down
+	
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+}
+
+
+script MandarinWarehouse1F_Spin7 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera7)
+	playse(SE_W081)
+	
+    waitmovement(0)
+	release
+	end
+}
+
+movement lodamera7 {
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+}
+
+script MandarinWarehouse1F_Spin8 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera8)
+	playse(SE_W081)
+	
+    waitmovement(0)
+	release
+	end
+}
+
+movement lodamera8 {
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+}
+
+script MandarinWarehouse1F_Spin9 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera9)
+	playse(SE_W081)
+	
+    waitmovement(0)
+	release
+	end
+}
+
+movement lodamera9 {
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+}
+
+
+
+script MandarinWarehouse1F_Spin10 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera10)
+	playse(SE_W081)
+	waitmovement(0)
+	warpteleport(MAP_ROCKET_WAREHOUSE_MANDARIN, 255, 1, 13)
+	waitstate
+	release
+	end
+}
+
+movement lodamera10 {
+	walk_fastest_left
+	
+	
+	walk_fastest_down
+	
+	walk_fastest_down
+	
+	walk_fastest_down
+	
+	walk_fastest_down
+	
+	walk_fastest_down
+}
+
+script MandarinWarehouse1F_Spin11 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera11)
+	playse(SE_W081)
+	waitmovement(0)
+	warpteleport(MAP_ROCKET_WAREHOUSE_MANDARIN, 255, 1, 13)
+	waitstate
+	release
+	end
+}
+
+movement lodamera11 {
+	walk_fastest_down
+	
+	walk_fastest_down
+	
+	walk_fastest_down
+	
+	walk_fastest_down
+	
+	walk_fastest_down
+	
+}
+
+
+
+script MandarinWarehouse1F_Spin12 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera12)
+	playse(SE_W081)
+	
+    waitmovement(0)
+	release
+	end
+}
+
+movement lodamera12 {
+	walk_fastest_down
+	walk_fastest_down
+	walk_fastest_down
+	
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+}
+
+
+
+script MandarinWarehouse1F_Spin13 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera13)
+	playse(SE_W081)
+	
+    waitmovement(0)
+	release
+	end
+}
+
+movement lodamera13 {
+	walk_fastest_down
+	walk_fastest_down
+	walk_fastest_down
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+}
+
+
+script MandarinWarehouse1F_Spin14 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera14)
+	playse(SE_W081)
+	
+    waitmovement(0)
+	release
+	end
+}
+
+movement lodamera14 {
+	walk_fastest_down
+	walk_fastest_down
+	walk_fastest_down
+
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_left
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+	walk_fastest_up
+	
+}
+
+
+
+script MandarinWarehouse1F_Spin15 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera15)
+	playse(SE_W081)
+	
+    waitmovement(0)
+	release
+	end
+}
+
+movement lodamera15 {
+	walk_fastest_right
+	walk_fastest_right
+	
+	walk_fastest_up
+	walk_fastest_up
+	
+}
+
+script MandarinWarehouse1F_Spin16 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera16)
+	playse(SE_W081)
+	
+    waitmovement(0)
+	release
+	end
+}
+
+movement lodamera16 {
+	walk_fastest_right
+	
+	walk_fastest_up
+	walk_fastest_up
+	
+}
+
+script MandarinWarehouse1F_Spin17 {
+	lock
+	applymovement(EVENT_OBJ_ID_PLAYER, lodamera17)
+	playse(SE_W081)
+	
+    waitmovement(0)
+	release
+	end
+}
+
+movement lodamera17 {
+	walk_fastest_up
+	walk_fastest_up
+	
+}

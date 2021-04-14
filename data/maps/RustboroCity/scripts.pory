@@ -1,0 +1,66 @@
+mapscripts RustboroCity_MapScripts {
+}
+
+script SunburstSign {
+	msgbox("SUNBURST ISLAND\nTolerance is Sour, but its Fruit is Sweet", MSGBOX_SIGN)
+	release
+	end
+}
+
+script SunburstGirl {
+	lock
+	faceplayer
+	msgbox("It's true that they have some\ninteresting merchandise at the\lBAZAAR over here, but some items are\lonly obtainable at POKéMON MARTS.", MSGBOX_AUTOCLOSE)
+	release
+	end
+}
+
+script SunburstLittleGirl {
+	lock
+	faceplayer
+	msgbox("My big brother used to make\nglass sculptures on the tiny island\lwest of town.\pIt let him focus on his art since\nhis shop was isolated from the\lbustling BAZAAR noises.\pUnfortunately, he started to lose\ninspiration towards his work, and the\lfact that he was no longer getting\lcustomers caused him to quit.\pSo, he left town to look for work\nsomewhere else.\pI hope he is taking care of himself… ", MSGBOX_AUTOCLOSE)
+	release
+	end
+}
+
+script SunburstOldMan {
+	lock
+	faceplayer
+	msgbox("This used to be a well-off town,\nlike MANDARIN ISLAND NORTH was.\pWe have been getting fewer\nvisitors lately, and it has caused\lour businesses to suffer.", MSGBOX_AUTOCLOSE)
+	release
+	end
+}
+
+script SunburstFatass {
+	lock
+	faceplayer
+	msgbox("Ahead lies CRYSTAL CAVE.\pLegend has it than an ONIX made of\ncrystal lives inside.\pSpeaking of ONIX, a GYM LEADER\nfrom the KANTO REGION came by earlier.", MSGBOX_AUTOCLOSE)
+	release
+	end
+}
+
+script MateoDoorLock {
+	msgbox("The door is locked.", MSGBOX_SIGN)
+	release
+	end
+}
+
+script CrystalShop {
+	msgbox("CRYSTAL SHOP\pOut of Business", MSGBOX_SIGN)
+	release
+	end
+}
+
+script Bazaar {
+	msgbox("SUNBURST BAZAAR", MSGBOX_SIGN)
+	release
+	end
+}
+
+script CrystalCave1 {
+	msgbox("CRYSTAL CAVE\n{RIGHT_ARROW} ROUTE 52", MSGBOX_SIGN)
+	release
+	end
+}
+
+

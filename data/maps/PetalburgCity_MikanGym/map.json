@@ -1,0 +1,99 @@
+{
+    "allow_bike": false,
+    "allow_escape_rope": false,
+    "allow_running": false,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "bg_events": [
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "MikanGymGloryBoard",
+            "type": "sign",
+            "x": 7,
+            "y": 15
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "MikanGymGloryBoard",
+            "type": "sign",
+            "x": 3,
+            "y": 15
+        }
+    ],
+    "connections": null,
+    "coord_events": [
+    ],
+    "id": "MAP_PETALBURG_CITY_MIKAN_GYM",
+    "layout": "LAYOUT_PETALBURG_CITY_MIKAN_GYM",
+    "map_type": "MAP_TYPE_INDOOR",
+    "music": "MUS_GIM",
+    "name": "PetalburgCity_MikanGym",
+    "object_events": [
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_DEVON_EMPLOYEE",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_NONE",
+            "script": "MikanGymDude",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 6,
+            "y": 15
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_TUBER_M_SWIMMING",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+            "script": "MikanGymTuber",
+            "trainer_sight_or_berry_tree_id": "1",
+            "trainer_type": "1",
+            "x": 6,
+            "y": 12
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_SWIMMER_F",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+            "script": "MikanGymSwimmer",
+            "trainer_sight_or_berry_tree_id": "1",
+            "trainer_type": "1",
+            "x": 4,
+            "y": 8
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_FLANNERY",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_NONE",
+            "script": "RustboroCity_Gym_EventScript_Roxanne",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 5,
+            "y": 3
+        }
+    ],
+    "region_map_section": "MAPSEC_PETALBURG_CITY",
+    "requires_flash": false,
+    "show_map_name": false,
+    "warp_events": [
+        {
+            "dest_map": "MAP_PETALBURG_CITY",
+            "dest_warp_id": 2,
+            "elevation": 0,
+            "x": 5,
+            "y": 17
+        }
+    ],
+    "weather": "WEATHER_SUNNY"
+}

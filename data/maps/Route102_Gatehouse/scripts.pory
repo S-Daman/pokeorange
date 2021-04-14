@@ -1,0 +1,36 @@
+mapscripts Route102_Gatehouse_MapScripts {
+}
+
+script Route50GateLass {
+    lock
+	faceplayer
+	msgbox("Oh, of all the rotten luck!\pYou can't go to MIKAN ISLAND\nunless you go through the WOODS!", MSGBOX_AUTOCLOSE) 
+	release
+}
+
+script Route50GatePoliceman {
+    lock
+	faceplayer
+	msgbox("TRAINER, be careful in TANGELO WOODS.\pMake sure you've stocked up on REPELS\nand status-healers like ANTIDOTES.", MSGBOX_AUTOCLOSE) 
+	release
+}
+
+script Route50GateGuardStopsYou {
+	applymovement(EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
+	applymovement(EVENT_OBJ_ID_PLAYER, Route50GateMove1)
+	waitmovement(0)		
+	msgbox("Ahead lies TANGELO JUNGLE.\pMake sure you've come prepared\nwith a strong POKéMON.", MSGBOX_AUTOCLOSE)
+	applymovement(EVENT_OBJ_ID_PLAYER, Route50GateMove2)
+	waitmovement(0)	
+	releaseall
+	end
+}
+
+movement Route50GateMove1 {
+	face_right
+}
+
+movement Route50GateMove2 {
+	walk_down
+}

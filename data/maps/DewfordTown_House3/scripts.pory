@@ -1,0 +1,10 @@
+mapscripts DewfordTown_House3_MapScripts {
+}
+
+script MandarinNorthOldie {
+	lock
+	faceplayer
+	msgbox("There used to be lots of people here.\pTourism died down in the southwest\nORANGE ARCHIPELAGO in recent years.\pNow, it is just us and the POKéMON.", MSGBOX_AUTOCLOSE)
+	release
+	end
+}

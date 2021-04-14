@@ -1,0 +1,164 @@
+{
+    "allow_bike": true,
+    "allow_escape_rope": false,
+    "allow_running": true,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "bg_events": [
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "Route52Sign",
+            "type": "sign",
+            "x": 15,
+            "y": 10
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_STARDUST",
+            "item": "ITEM_STARDUST",
+            "type": "hidden_item",
+            "x": 23,
+            "y": 11
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_HEART_SCALE",
+            "item": "ITEM_HEART_SCALE",
+            "type": "hidden_item",
+            "x": 13,
+            "y": 49
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_REVIVE",
+            "item": "ITEM_REVIVE",
+            "type": "hidden_item",
+            "x": 33,
+            "y": 55
+        },
+        {
+            "elevation": 0,
+            "secret_base_id": "SECRET_BASE_RED_CAVE4_2",
+            "type": "secret_base",
+            "x": 20,
+            "y": 5
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "Whirlpool52",
+            "type": "sign",
+            "x": 31,
+            "y": 17
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "Whirlpool52",
+            "type": "sign",
+            "x": 31,
+            "y": 18
+        }
+    ],
+    "connections": [
+        {
+            "direction": "right",
+            "map": "MAP_ROUTE105",
+            "offset": 0
+        }
+    ],
+    "coord_events": [
+    ],
+    "id": "MAP_ROUTE104",
+    "layout": "LAYOUT_ROUTE104",
+    "map_type": "MAP_TYPE_ROUTE",
+    "music": "MUS_NEXTROAD",
+    "name": "Route104",
+    "object_events": [
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_SWIMMER_M",
+            "movement_range_x": 6,
+            "movement_range_y": 6,
+            "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+            "script": "Route52SwimmerJerry",
+            "trainer_sight_or_berry_tree_id": "4",
+            "trainer_type": "1",
+            "x": 43,
+            "y": 38
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_BLACK_BELT",
+            "movement_range_x": 3,
+            "movement_range_y": 3,
+            "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_RIGHT_UP",
+            "script": "Route52BlackBeltRyohei",
+            "trainer_sight_or_berry_tree_id": "1",
+            "trainer_type": "1",
+            "x": 37,
+            "y": 52
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_SWIMMER_F",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+            "script": "Route52SwimmerEllie",
+            "trainer_sight_or_berry_tree_id": "5",
+            "trainer_type": "1",
+            "x": 17,
+            "y": 17
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_ITEM_ROUTE_104_X_ACCURACY",
+            "graphics_id": "EVENT_OBJ_GFX_ITEM_BALL",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+            "script": "Route52Nugget",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 19,
+            "y": 50
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_ITEM_ROUTE_104_POTION",
+            "graphics_id": "EVENT_OBJ_GFX_ITEM_BALL",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+            "script": "Route52SunnyDay",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 33,
+            "y": 24
+        }
+    ],
+    "region_map_section": "MAPSEC_ROUTE_104",
+    "requires_flash": false,
+    "show_map_name": true,
+    "warp_events": [
+        {
+            "dest_map": "MAP_ROUTE111_OLD_LADYS_REST_STOP",
+            "dest_warp_id": 1,
+            "elevation": 0,
+            "x": 20,
+            "y": 52
+        },
+        {
+            "dest_map": "MAP_GRANITE_CAVE_1F",
+            "dest_warp_id": 2,
+            "elevation": 0,
+            "x": 10,
+            "y": 5
+        }
+    ],
+    "weather": "WEATHER_DROUGHT"
+}

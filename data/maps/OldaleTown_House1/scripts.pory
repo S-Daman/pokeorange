@@ -1,0 +1,18 @@
+mapscripts OldaleTown_House1_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+    }
+}
+
+script OldaleTownHouse1Girl {
+    lock
+	faceplayer
+	msgbox("Of all the ORANGE CREW members, the\nstrongest is DRAKE, on PUMMELO ISLAND.", MSGBOX_AUTOCLOSE) 
+	release
+}
+
+script OldaleTownHouse1Fatass {
+    lock
+	faceplayer
+	msgbox("Hm… Those are some great POKéMON\nyou have there.\pTaking on the ORANGE CREW won't be\nan easy task, though.", MSGBOX_AUTOCLOSE) 
+	release
+}

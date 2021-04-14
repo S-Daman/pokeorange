@@ -1,0 +1,194 @@
+mapscripts GraniteCave_B1F_MapScripts {
+}
+
+
+script CrystalOnixRoar {
+	lockall
+	waitse
+	playmoncry(SPECIES_ORANGE_ONIX, 0)
+	waitmoncry
+	applymovement(EVENT_OBJ_ID_PLAYER, CrystalOnixRoarPlayerExclamation)
+	waitmovement(0)
+	waitse
+	playse(SE_PIN)
+	waitse
+	special(SpawnCameraObject)
+	applymovement(EVENT_OBJ_ID_CAMERA, CrystalOnixCamera1)
+	waitmovement(0)
+	waitse
+	playmoncry(SPECIES_ORANGE_ONIX, 0)
+	waitmoncry
+	delay(10)
+	applymovement(EVENT_OBJ_ID_CAMERA, CrystalOnixCamera2)
+	waitmovement(0)
+	special(RemoveCameraObject)
+	setvar(VAR_ROUTE105_STATE, 10)
+	releaseall
+	end
+}
+
+movement CrystalOnixCamera1 {
+	walk_fast_right * 10
+	step_end
+}
+
+movement CrystalOnixCamera2 {
+	walk_fast_left * 10
+	step_end
+}
+
+movement CrystalOnixRoarPlayerExclamation {
+	emote_exclamation_mark
+	face_right
+	step_end
+}
+
+script CrystalCaveBrockB1F {
+	lockall
+	getplayerxy (VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 26) {
+		applymovement(EVENT_OBJ_ID_PLAYER, WalkToBrock1)
+		waitmovement(0)	
+		delay(25)
+		applymovement(2, BrockLookLeft)
+		waitmovement(0)		
+		waitse
+		playse(SE_PIN)
+		waitse
+		msgbox(CrystalCaveBrockIntro, MSGBOX_AUTOCLOSE)
+		trainerbattle_no_intro(TRAINER_FREDRICK, CrystalCaveBrockDefeat)
+		msgbox(CrystalCaveBrockPost, MSGBOX_AUTOCLOSE)
+		turnobject(2, 2)
+		setvar(VAR_ROUTE105_STATE, 11)
+		releaseall
+	}
+	if (var(VAR_TEMP_1) == 27) {
+		applymovement(EVENT_OBJ_ID_PLAYER, WalkToBrock2)
+		waitmovement(0)	
+		delay(25)
+		applymovement(2, BrockLookLeft)
+		waitmovement(0)		
+		waitse
+		playse(SE_PIN)
+		waitse
+		msgbox(CrystalCaveBrockIntro, MSGBOX_AUTOCLOSE)
+		trainerbattle_no_intro(TRAINER_FREDRICK, CrystalCaveBrockDefeat)
+		msgbox(CrystalCaveBrockPost, MSGBOX_AUTOCLOSE)
+		turnobject(2, 2)
+		setvar(VAR_ROUTE105_STATE, 11)
+		releaseall
+	}
+	end
+}
+	
+movement WalkToBrock1 {
+	walk_right * 2
+	walk_up
+	face_right
+	step_end
+}
+
+movement WalkToBrock2 {
+	walk_up * 2
+	walk_right
+	step_end
+}
+
+
+movement BrockLookLeft {
+	emote_exclamation_mark
+	face_left
+	step_end
+}
+	
+text CrystalCaveBrockIntro {
+	"{PLAYER}, you made it!\p"
+	"Well, then, as we promised, let's\n"
+	"battle for the right to take on the\l"
+	"CRYSTAL ONIX!$"
+}
+
+text CrystalCaveBrockDefeat {
+	"Seems like it's your turn this time…$"
+}
+
+text CrystalCaveBrockPost {
+	"{PLAYER}, that was amazing!\p"
+	"You displayed skill that I have\n"
+	"only seen from two other TRAINERS.\p"
+	"You are truly worthy of facing the\n"
+	"CRYSTAL ONIX.\p"
+	"Please go ahead!$"
+}
+
+
+script CrystalOnixBattle {
+	lock
+	faceplayer
+	waitse
+	playmoncry(SPECIES_ORANGE_ONIX, 2)
+	delay(40)
+	waitmoncry
+	setwildbattle(SPECIES_ORANGE_ONIX, 20, ITEM_NONE)
+	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	special(StartRegiBattle)
+	waitstate
+	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	specialvar(VAR_RESULT, GetBattleOutcome)
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+		goto(IslandCave_EventScript_DefeatedRegice)
+	}
+	if (var(VAR_RESULT) == B_OUTCOME_RAN) {
+		goto(IslandCave_EventScript_RanFromRegice)
+	}
+	if (var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED) {
+		goto(IslandCave_EventScript_RanFromRegice)
+	}
+	fadescreenswapbuffers(1)
+	removeobject(VAR_LAST_TALKED)
+	fadescreenswapbuffers(0)
+	setflag(FLAG_DEFEATED_REGICE)
+	release
+	end
+}
+
+script BrockSalty {
+	lock
+	faceplayer
+	if(flag(FLAG_UNUSED_0x030)) {
+		msgbox("I'm staying here for a little while\nto research this cave, {PLAYER}.\pI hope our paths will cross\nagain someday.", MSGBOX_AUTOCLOSE)
+		release
+		end
+	}
+	if(flag(FLAG_DEFEATED_REGICE)) {
+        switch (var(VAR_FACING)) {
+			case DIR_NORTH:
+				msgbox("{PLAYER}, after just witnessing your\nbattle, I've realized that you must've\lbeen chosen by the CRYSTAL ONIX.\pHad you not come, it might've\nnot even revealed itself in the\lfirst place.\pI should've understood this sooner…", MSGBOX_AUTOCLOSE)
+				turnobject(2, 2)
+				delay(70)
+				turnobject(2, 1)
+				msgbox("I really appreciate you coming down\nhere, {PLAYER}.\pI'm going to hang around here for a\nlittle while to research this place.\pWho knows what secrets lie here?", MSGBOX_AUTOCLOSE)
+				setflag(FLAG_UNUSED_0x030)
+			case DIR_WEST:
+				msgbox("{PLAYER}, after just witnessing your\nbattle, I've realized that you must've\lbeen chosen by the CRYSTAL ONIX.\pHad you not come, it might've\nnot even revealed itself in the\lfirst place.\pI should've understood this sooner…", MSGBOX_AUTOCLOSE)
+				turnobject(2, 2)
+				delay(70)
+				turnobject(2, 4)
+				msgbox("I really appreciate you coming down\nhere, {PLAYER}.\pI'm going to hang around here for a\nlittle while to research this place.\pWho knows what secrets lie here?", MSGBOX_AUTOCLOSE)
+				setflag(FLAG_UNUSED_0x030)
+			case DIR_EAST:
+				msgbox("{PLAYER}, after just witnessing your\nbattle, I've realized that you must've\lbeen chosen by the CRYSTAL ONIX.\pHad you not come, it might've\nnot even revealed itself in the\lfirst place.\pI should've understood this sooner…", MSGBOX_AUTOCLOSE)
+				turnobject(2, 2)
+				delay(70)
+				turnobject(2, 3)
+				msgbox("I really appreciate you coming down\nhere, {PLAYER}.\pI'm going to hang around here for a\nlittle while to research this place.\pWho knows what secrets lie here?", MSGBOX_AUTOCLOSE)
+				setflag(FLAG_UNUSED_0x030)
+		}
+		release
+		end
+	}
+	msgbox("{PLAYER}, please go ahead and\nface the CRYSTAL ONIX!", MSGBOX_AUTOCLOSE)
+	turnobject(2, 2)
+	release
+	end
+}

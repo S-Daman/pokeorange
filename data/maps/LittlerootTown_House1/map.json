@@ -1,0 +1,57 @@
+{
+    "allow_bike": false,
+    "allow_escape_rope": false,
+    "allow_running": false,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "bg_events": [
+    ],
+    "connections": null,
+    "coord_events": [
+    ],
+    "id": "MAP_LITTLEROOT_TOWN_HOUSE1",
+    "layout": "LAYOUT_LITTLEROOT_TOWN_HOUSE1",
+    "map_type": "MAP_TYPE_INDOOR",
+    "music": "MUS_VALENCIA",
+    "name": "LittlerootTown_House1",
+    "object_events": [
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_LASS",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+            "script": "MapGirl",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 4,
+            "y": 4
+        },
+        {
+            "elevation": 3,
+            "flag": "ITEM_TOWN_MAP",
+            "graphics_id": "EVENT_OBJ_GFX_UNUSED_PIKACHU_DOLL",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_NONE",
+            "script": "OrangeMap",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 5,
+            "y": 4
+        }
+    ],
+    "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+    "requires_flash": false,
+    "show_map_name": false,
+    "warp_events": [
+        {
+            "dest_map": "MAP_LITTLEROOT_TOWN",
+            "dest_warp_id": 3,
+            "elevation": 0,
+            "x": 4,
+            "y": 7
+        }
+    ],
+    "weather": "WEATHER_NONE"
+}

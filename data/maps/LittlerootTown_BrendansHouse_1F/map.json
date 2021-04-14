@@ -1,0 +1,95 @@
+{
+    "allow_bike": false,
+    "allow_escape_rope": false,
+    "allow_running": false,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "bg_events": [
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+            "script": "LittlerootTown_BrendansHouse_1F_EventScript_BeforeClock",
+            "type": "sign",
+            "x": 3,
+            "y": 5
+        }
+    ],
+    "connections": null,
+    "coord_events": [
+        {
+            "elevation": 0,
+            "script": "LittlerootTown_BrendansHouse_1F_EventScript_GoSeeRoom",
+            "type": "trigger",
+            "var": "VAR_LITTLEROOT_INTRO_STATE",
+            "var_value": "4",
+            "x": 3,
+            "y": 3
+        },
+        {
+            "elevation": 0,
+            "script": "LittlerootTown_BrendansHouse_1F_EventScript_MeetRival0",
+            "type": "trigger",
+            "var": "VAR_LITTLEROOT_RIVAL_STATE",
+            "var_value": "2",
+            "x": 3,
+            "y": 3
+        },
+        {
+            "elevation": 0,
+            "script": "LittlerootTown_BrendansHouse_1F_EventScript_MeetRival1",
+            "type": "trigger",
+            "var": "VAR_LITTLEROOT_RIVAL_STATE",
+            "var_value": "2",
+            "x": 3,
+            "y": 3
+        },
+        {
+            "elevation": 0,
+            "script": "LittlerootTown_BrendansHouse_1F_EventScript_MeetRival2",
+            "type": "trigger",
+            "var": "VAR_LITTLEROOT_RIVAL_STATE",
+            "var_value": "2",
+            "x": 3,
+            "y": 3
+        }
+    ],
+    "id": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+    "layout": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+    "map_type": "MAP_TYPE_INDOOR",
+    "music": "MUS_VALENCIA",
+    "name": "LittlerootTown_BrendansHouse_1F",
+    "object_events": [
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_MOM",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+            "script": "MomSpoiler",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 7,
+            "y": 5
+        }
+    ],
+    "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+    "requires_flash": false,
+    "show_map_name": false,
+    "warp_events": [
+        {
+            "dest_map": "MAP_LITTLEROOT_TOWN",
+            "dest_warp_id": 1,
+            "elevation": 0,
+            "x": 6,
+            "y": 9
+        },
+        {
+            "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 8,
+            "y": 2
+        }
+    ],
+    "weather": "WEATHER_NONE"
+}

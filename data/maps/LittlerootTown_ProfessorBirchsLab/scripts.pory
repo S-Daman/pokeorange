@@ -1,0 +1,612 @@
+const PROF_IVY_ID = 1
+const VAR_PLAYER_X = VAR_TEMP_0
+const VAR_PLAYER_Y = VAR_TEMP_1
+const HOPE_ID = 2
+const SPACE_IN_PARTY = 0
+const NO_SPACE_IN_PARTY = 1
+
+mapscripts LittlerootTown_ProfessorBirchsLab_MapScripts {
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ROUTE105_STATE, 0 {
+			lockall
+			setvar(VAR_ROUTE106_STATE, 0)
+			setobjectxy(PROF_IVY_ID, 3, 4)
+			setvar(VAR_CABLE_CLUB_TUTORIAL_STATE, 1)
+			clearflag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CYNDAQUIL)
+			clearflag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TOTODILE)
+			clearflag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CHIKORITA)
+			applymovement(EVENT_OBJ_ID_PLAYER, MapScript_PlayerMove)
+			waitmovement(EVENT_OBJ_ID_PLAYER)
+			applymovement(PROF_IVY_ID, Common_Movement_ExclamationMark)
+			playse(SE_PIN)
+			delay(64)
+			turnobject(PROF_IVY_ID, DIR_EAST)
+			msgbox("PROF. IVY: {PLAYER}!\n"
+				   "There you are!\p"
+				   "Today is the day you begin your\n"
+				   "POKéMON journey.\p"
+				   "As a POKéMON PROFESSOR, I will give\n"
+				   "you a tool known as a POKéDEX.\p"
+				   "It will record data of all sorts of\n"
+				   "POKéMON you see or catch.\p"
+				   "I'd also like you to take a\n"
+				   "POKéMON that I recently caught.$")
+			closemessage
+			applymovement(PROF_IVY_ID, MapScript_IvyMoveToTable)
+			delay(16)
+			turnobject(EVENT_OBJ_ID_PLAYER, DIR_WEST)
+			delay(26)
+			turnobject(EVENT_OBJ_ID_PLAYER, DIR_EAST)
+			waitmovement(PROF_IVY_ID)
+			msgbox("I want you to raise one of the POKéMON\n"
+				   "contained in these POKé BALLS.\p"
+				   "You'll be that POKéMON's first partner,\n"
+				   "{PLAYER}! Go on. Pick one!$")
+			setvar(VAR_ROUTE105_STATE, 1)
+			setflag(FLAG_UNUSED_0x022)
+			releaseall
+		}
+	]
+}
+
+movement MapScript_PlayerMove {
+	walk_up * 7
+    walk_left
+}
+
+movement MapScript_IvyMoveToTable {
+	walk_up
+	walk_right * 3
+	face_down
+}
+
+script TileScript_StarterNotChosenYet {
+	lockall
+	msgbox("PROF. IVY: Wait! Where are you going?$", MSGBOX_AUTOCLOSE)
+    applymovement(EVENT_OBJ_ID_PLAYER, Common_Movement_WalkUp)
+	waitmovement(EVENT_OBJ_ID_PLAYER)
+	releaseall
+}
+
+script TileScript_HopeGivesPokeBalls {
+	lockall
+	getplayerxy(VAR_PLAYER_X, VAR_PLAYER_Y)
+	switch (var(VAR_PLAYER_X)) {
+		case 4:
+			applymovement(HOPE_ID, TileScript_HopeWalksToPlayerLeftTile)
+			waitmovement(HOPE_ID)
+		case 5:
+			applymovement(HOPE_ID, TileScript_HopeWalksToPlayerMidTile)
+			waitmovement(HOPE_ID)
+		case 6:
+			applymovement(HOPE_ID, TileScript_HopeWalksToPlayerRightTile)
+			waitmovement(HOPE_ID)
+	}
+	msgbox("{PLAYER}!\n"
+		   "Use these on your POKéDEX quest!$")
+	giveitem_std(ITEM_POKE_BALL, 5)
+	msgbox("To complete the POKéDEX, you have\n"
+		   "to catch POKéMON.\p"
+		   "Throw POKé BALLS at wild POKéMON\n"
+		   "to catch them.$", MSGBOX_AUTOCLOSE)
+	switch(var(VAR_PLAYER_X)) {
+		case 4:
+			applymovement(HOPE_ID, TileScript_HopeWalksBackLeftTile)
+			waitmovement(HOPE_ID)
+		case 5:
+			applymovement(HOPE_ID, TileScript_HopeWalksBackMidTile)
+			waitmovement(HOPE_ID)
+		case 6:
+			applymovement(HOPE_ID, TileScript_HopeWalksBackRightTile)
+			waitmovement(HOPE_ID)
+	}
+	setvar(VAR_ROUTE105_STATE, 3)
+	releaseall
+}
+
+movement TileScript_HopeWalksToPlayerLeftTile {
+	walk_right
+	face_up
+}
+
+movement TileScript_HopeWalksToPlayerMidTile {
+	walk_right * 2
+	face_up
+}
+
+movement TileScript_HopeWalksToPlayerRightTile {
+	walk_right * 3
+	face_up
+}
+
+movement TileScript_HopeWalksBackLeftTile {
+	walk_left
+	delay_1
+	face_down
+}
+
+movement TileScript_HopeWalksBackMidTile {
+	walk_left * 2
+	delay_1
+	face_down
+}
+
+movement TileScript_HopeWalksBackRightTile {
+	walk_left * 3
+	delay_1
+	face_down
+}
+
+script EventScript_Hope {
+	lock
+	faceplayer
+	msgbox("To complete the POKéDEX, you have\n"
+		   "to catch POKéMON.\p"
+		   "Throw POKé BALLS at wild POKéMON\n"
+		   "to catch them.$")
+	release
+}
+
+script EventScript_Ivy {
+	lock
+	faceplayer
+	if (flag(FLAG_GS_BALL_TRACEY)) {
+		if (flag(FLAG_GS_BALL_IVY)) {
+			msgbox("I'm counting on you, {PLAYER}.\p"
+				   "Please alert me if you find out\n"
+				   "any information about that GS BALL.$")
+			release
+			return
+		}
+		msgbox("PROF. IVY: Oh, {PLAYER}!\n"
+			   "Good to see you.\p"
+			   "It seems my old POKéMON has grown\n"
+			   "pretty attached to you.\p"
+			   "Huh, you have something for me?$")
+		playfanfare(MUS_ME_WAZA)
+		message("{PLAYER} delivered the GS BALL.$")
+		waitmessage
+		waitfanfare
+		takeitem(ITEM_DEVON_GOODS, 1)
+		applymovement(PROF_IVY_ID, Common_Movement_ExclamationMark)
+		waitmovement(0)
+		delay(7)
+		playse(SE_PIN)
+		waitse
+        switch (var(VAR_FACING)) {
+			case DIR_SOUTH:
+				applymovement(PROF_IVY_ID, Movement_IvyExcitedFacingNorth)
+				waitmovement(0)
+			case DIR_NORTH:
+				applymovement(PROF_IVY_ID, Movement_IvyExcitedFacingSouth)
+				waitmovement(0)
+			case DIR_WEST:
+				applymovement(PROF_IVY_ID, Movement_IvyExcitedFacingEast)
+				waitmovement(0)
+			case DIR_EAST:
+				applymovement(PROF_IVY_ID, Movement_IvyExcitedFacingWest)
+				waitmovement(0)
+		}
+		msgbox("PROF. IVY: This is…\p"
+			   "This is a very important item.\n"
+			   "The GS BALL.\p"
+			   "I don't know what it does or\n"
+			   "who even made it.\p"
+			   "I had it sent to PROF. OAK in\n"
+			   "the KANTO region.\p"
+			   "It seems he didn't know either…\p"
+			   "Thank you for bringing it back\n"
+			   "to me safely, {PLAYER}.\p"
+			   "I will further examine it here,\n"
+			   "and update you if I discover anything.\p"
+			   "Now that you are travelling across\n"
+			   "the region, please let me know\l"
+			   "if you find any clues, too.\p"
+			   "I'm counting on you, {PLAYER}!$")
+		setflag(FLAG_GS_BALL_IVY)
+		release
+        return
+	}
+	if (var(VAR_ROUTE105_STATE) >= 2) {
+		msgbox("Take care, {PLAYER}.\p"
+			   "Always remember to visit home\n"
+			   "from time to time.$")
+	} else { 
+		msgbox("I want you to raise one of the POKéMON\n"
+			   "contained in these POKé BALLS.\p"
+			   "You'll be that POKéMON's first partner,\n"
+			   "{PLAYER}! Go on. Pick one!$")
+	}
+	release
+}
+
+movement Movement_IvyExcitedFacingNorth {
+	walk_in_place_fast_up
+	walk_in_place_fastest_up
+	walk_in_place_fast_up
+	walk_in_place_fastest_up
+}
+
+movement Movement_IvyExcitedFacingSouth {
+	walk_in_place_fast_down
+	walk_in_place_fastest_down
+	walk_in_place_fast_down
+	walk_in_place_fastest_down
+}
+
+movement Movement_IvyExcitedFacingEast {
+	walk_in_place_fast_right
+	walk_in_place_fastest_right
+	walk_in_place_fast_right
+	walk_in_place_fastest_right
+}
+
+movement Movement_IvyExcitedFacingWest {
+	walk_in_place_fast_left
+	walk_in_place_fastest_left
+	walk_in_place_fast_left
+	walk_in_place_fastest_left
+}
+
+script EventScript_HealingMachinePC {
+	lockall
+	if (var(VAR_ROUTE105_STATE) >= 2) {
+		msgbox("Would you like to heal your POKéMON?$", MSGBOX_YESNO)
+		if (var(VAR_RESULT) != 1) {
+			releaseall
+        } else {
+			fadescreen(1)
+			playfanfare(MUS_ME_ASA)
+			release
+			lock
+			special(HealPlayerParty)
+			waitfanfare
+			fadescreen(0)
+			setrespawn(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F)
+			releaseall
+		}
+	} else {
+		msgbox("This PC contains PROF. IVY's research!\n"
+			   "Better ask her before using it.$")
+		releaseall
+	}
+}
+
+script EventScript_Cyndaquil {
+	release
+	if (var(VAR_ROUTE105_STATE) >= 2) {
+		msgbox("It contains a POKéMON caught by\n"
+			   "PROF. IVY.$")
+		releaseall
+	} else {
+		applymovement(PROF_IVY_ID, Movement_Ivy_FaceDown)
+		waitmovement(0)
+		showmonpic(SPECIES_CYNDAQUIL, 10, 3)
+		playmoncry(SPECIES_CYNDAQUIL, 0)
+		msgbox("PROF. IVY: The FIRE POKéMON\n"
+			   "CYNDAQUIL caught your eye?$", MSGBOX_YESNO)
+        if (var(VAR_RESULT) == 0) {
+			hidemonpic
+			msgbox("PROF. IVY: Take your time before\n"
+				   "you decide.\p"
+				   "Your partner is important.$")
+			releaseall
+        } else {
+			bufferspeciesname(0, SPECIES_CYNDAQUIL)
+			setvar(VAR_TEMP_1, SPECIES_CYNDAQUIL)
+			givemon(SPECIES_CYNDAQUIL, 5, ITEM_ORAN_BERRY)
+            switch (var(VAR_RESULT)) {
+            	case SPACE_IN_PARTY:
+					call(EventScript_ReceivedJohtoStarter)
+					removeobject(3)
+					msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						call(Common_EventScript_GetGiftMonPartySlot)
+						call(Common_EventScript_NameReceivedPartyMon)
+					}
+					goto(EventScript_ReceivedCyndaquil)
+				case NO_SPACE_IN_PARTY:
+					call(EventScript_ReceivedJohtoStarter)
+					removeobject(3)
+					msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						call(Common_EventScript_NameReceivedBoxMon)
+					}
+					call(Common_EventScript_TransferredToPC)
+					goto(EventScript_ReceivedCyndaquil)
+				default:
+					hidemonpic
+					goto(Common_EventScript_NoMoreRoomForPokemon)
+			}
+		}
+	}
+}
+
+script EventScript_ReceivedCyndaquil {
+	hidemonpic 
+	closemessage
+	getplayerxy(VAR_PLAYER_X, VAR_PLAYER_Y)
+	switch (var(VAR_PLAYER_Y)) {
+		case 3:
+			delay(5)
+			turnobject(PROF_IVY_ID, DIR_EAST)
+			delay(5)
+			turnobject(EVENT_OBJ_ID_PLAYER, DIR_WEST)
+		case 4:
+			delay(5)
+			turnobject(PROF_IVY_ID, DIR_SOUTH)
+			delay(5)
+			turnobject(EVENT_OBJ_ID_PLAYER, DIR_NORTH)
+		case 5:
+			applymovement(EVENT_OBJ_ID_PLAYER, Movement_CyndaquilPlayerFacingNorth)
+			delay(5)
+			turnobject(PROF_IVY_ID, DIR_SOUTH)
+			waitmovement(0)
+	}
+	setflag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CYNDAQUIL)
+	setvar(VAR_ROUTE105_STATE, 2)
+	goto(EventScript_IvyAfterStarterChosen)
+}
+
+movement Movement_CyndaquilPlayerFacingNorth {
+	walk_left
+	walk_up
+}
+
+script EventScript_Totodile {
+	release
+	if (var(VAR_ROUTE105_STATE) >= 2) {
+		msgbox("It contains a POKéMON caught by\n"
+			   "PROF. IVY.$")
+		releaseall
+	} else {
+		applymovement(PROF_IVY_ID, Movement_Ivy_FaceDown)
+		waitmovement(0)
+		showmonpic(SPECIES_TOTODILE, 10, 3)
+		playmoncry(SPECIES_TOTODILE, 0)
+		msgbox("PROF. IVY: The WATER POKéMON\n"
+			   "TOTODILE is your choice?$", MSGBOX_YESNO)
+        if (var(VAR_RESULT) == 0) {
+			hidemonpic
+			msgbox("PROF. IVY: Take your time before\n"
+				   "you decide.\p"
+				   "Your partner is important.$")
+			releaseall
+        } else {
+			bufferspeciesname(0, SPECIES_TOTODILE)
+			setvar(VAR_TEMP_1, SPECIES_TOTODILE)
+			givemon(SPECIES_TOTODILE, 5, ITEM_ORAN_BERRY)
+            switch (var(VAR_RESULT)) {
+            	case SPACE_IN_PARTY:
+					call(EventScript_ReceivedJohtoStarter)
+					removeobject(4)
+					msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						call(Common_EventScript_GetGiftMonPartySlot)
+						call(Common_EventScript_NameReceivedPartyMon)
+					}
+					goto(EventScript_ReceivedTotodile)
+				case NO_SPACE_IN_PARTY:
+					call(EventScript_ReceivedJohtoStarter)
+					removeobject(4)
+					msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						call(Common_EventScript_NameReceivedBoxMon)
+					}
+					call(Common_EventScript_TransferredToPC)
+					goto(EventScript_ReceivedTotodile)
+				default:
+					hidemonpic
+					goto(Common_EventScript_NoMoreRoomForPokemon)
+			}
+		}
+	}
+}
+
+script EventScript_ReceivedTotodile {
+	hidemonpic 
+	closemessage
+	getplayerxy(VAR_PLAYER_X, VAR_PLAYER_Y)
+	switch (var(VAR_PLAYER_Y)) {
+		case 3:
+			applymovement(EVENT_OBJ_ID_PLAYER, Movement_TotodilePlayerFacingSouth)
+            delay(5)
+			turnobject(PROF_IVY_ID, DIR_EAST)
+			waitmovement(0)
+		case 5:
+			applymovement(EVENT_OBJ_ID_PLAYER, Movement_TotodilePlayerFacingNorth)
+            delay(5)
+			turnobject(PROF_IVY_ID, DIR_SOUTH)
+			waitmovement(0)
+	}
+	setflag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TOTODILE)
+	setvar(VAR_ROUTE105_STATE, 2)
+	goto(EventScript_IvyAfterStarterChosen)
+}
+
+movement Movement_TotodilePlayerFacingSouth {
+	walk_left
+}
+
+movement Movement_TotodilePlayerFacingNorth {
+	walk_left * 2
+	walk_up
+}
+
+script EventScript_Chikorita {
+	release
+	if (var(VAR_ROUTE105_STATE) >= 2) {
+		msgbox("It contains a POKéMON caught by\n"
+			   "PROF. IVY.$")
+		releaseall
+	} else {
+		applymovement(PROF_IVY_ID, Movement_Ivy_FaceDown)
+		waitmovement(0)
+		showmonpic(SPECIES_CHIKORITA, 10, 3)
+		playmoncry(SPECIES_CHIKORITA, 0)
+		msgbox("PROF. IVY: So, you have decided on\n"
+			   "CHIKORITA, the GRASS POKéMON?$", MSGBOX_YESNO)
+        if (var(VAR_RESULT) == 0) {
+			hidemonpic
+			msgbox("PROF. IVY: Take your time before\n"
+				   "you decide.\p"
+				   "Your partner is important.$")
+			releaseall
+        } else {
+			bufferspeciesname(0, SPECIES_CHIKORITA)
+			setvar(VAR_TEMP_1, SPECIES_CHIKORITA)
+			givemon(SPECIES_CHIKORITA, 5, ITEM_ORAN_BERRY)
+            switch (var(VAR_RESULT)) {
+            	case SPACE_IN_PARTY:
+					call(EventScript_ReceivedJohtoStarter)
+					removeobject(5)
+					msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						call(Common_EventScript_GetGiftMonPartySlot)
+						call(Common_EventScript_NameReceivedPartyMon)
+					}
+					goto(EventScript_ReceivedChikorita)
+				case NO_SPACE_IN_PARTY:
+					call(EventScript_ReceivedJohtoStarter)
+					removeobject(5)
+					msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+					if (var(VAR_RESULT) == YES) {
+						call(Common_EventScript_NameReceivedBoxMon)
+					}
+					call(Common_EventScript_TransferredToPC)
+					goto(EventScript_ReceivedChikorita)
+				default:
+					hidemonpic
+					goto(Common_EventScript_NoMoreRoomForPokemon)
+			}
+		}
+	}
+}
+
+script EventScript_ReceivedChikorita {
+	hidemonpic 
+	closemessage
+	getplayerxy(VAR_PLAYER_X, VAR_PLAYER_Y)
+	switch (var(VAR_PLAYER_Y)) {
+		case 3:
+			applymovement(EVENT_OBJ_ID_PLAYER, Movement_ChikoritaPlayerFacingSouth)
+            delay(5)
+			turnobject(PROF_IVY_ID, DIR_EAST)
+			waitmovement(0)
+		case 5:
+			applymovement(EVENT_OBJ_ID_PLAYER, Movement_ChikoritaPlayerFacingNorth)
+            delay(5)
+			turnobject(PROF_IVY_ID, DIR_SOUTH)
+			waitmovement(0)
+	}
+	setflag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CHIKORITA)
+	setvar(VAR_ROUTE105_STATE, 2)
+	goto(EventScript_IvyAfterStarterChosen)
+}
+
+movement Movement_ChikoritaPlayerFacingSouth {
+	walk_left * 2
+}
+
+movement Movement_ChikoritaPlayerFacingNorth {
+	walk_left * 3
+	walk_up
+}
+
+script EventScript_ReceivedJohtoStarter {
+	msgbox("PROF. IVY: I think that's a cool\n"
+		   "POKéMON too!$")
+	playfanfare(MUS_RG_FAN5)
+	message("{PLAYER} received the {STR_VAR_1}\n"
+			"from PROF. IVY!$")
+	waitmessage
+	waitfanfare
+}
+
+script EventScript_IvyAfterStarterChosen {
+	msgbox("{PLAYER}, go to the west end of\n"
+		   "ROUTE 49 to find VALENCIA PORT.\p"
+		   "You can catch the SEAGALLOP FERRY\n"
+		   "there to head to TANGELO ISLAND.$")
+	delay(5)
+	turnobject(PROF_IVY_ID, DIR_WEST)
+	msgbox("If your POKéMON is hurt, you should\n"
+		   "heal it using the machine over there.\p"
+		   "Feel free to use it anytime.$")
+	getplayerxy(VAR_PLAYER_X, VAR_PLAYER_Y)
+    switch (var(VAR_PLAYER_X)) {
+		case 6:
+			delay(5)
+			turnobject(PROF_IVY_ID, DIR_SOUTH)
+		case 7:
+			delay(5)
+			turnobject(PROF_IVY_ID, DIR_EAST)
+	}
+	msgbox("Finally, here's the POKéDEX I mentioned\n"
+		   "earlier. It's a hi-tech encyclopedia!\p"
+		   "Go discover all kinds of POKéMON, and\n"
+		   "complete that POKéDEX!$")
+	setflag(FLAG_SYS_POKEMON_GET)
+	setflag(FLAG_SYS_POKEDEX_GET)
+	playfanfare(MUS_FANFA5)
+	message("{PLAYER} received the POKéDEX from\n"
+			"PROF. IVY!$")
+	waitmessage
+	waitfanfare
+	msgbox("Take care, {PLAYER}!$")
+	releaseall
+}
+
+movement Movement_Ivy_FaceDown {
+	face_down
+}
+
+script EventScript_HealingMachine {
+	msgbox("There's a note…\p"
+		   "Use this machine to heal your POKéMON!\n"
+		   "Interact with the PC to operate it.$", MSGBOX_SIGN)
+}
+
+script EventScript_RegionalFormsResearchPC {
+	msgbox("REGIONAL FORMS OF POKéMON\p"
+		   "…It says on the screen…$", MSGBOX_SIGN)
+}
+
+script EventScript_WindowSeaBreeze {
+	msgbox("The window's open.\n"
+		   "An ocean breeze is blowing in.$", MSGBOX_SIGN)
+}
+
+script EventScript_Bookshelves {
+	getplayerxy(VAR_PLAYER_X, VAR_PLAYER_Y)
+    switch (var(VAR_PLAYER_X)) {
+		case 0:
+			msgbox("{PLAYER} opened a book.\p"
+				   "Travel Tip 1: Press START to open\n"
+				   "the menu.$", MSGBOX_SIGN)
+		case 1:
+			msgbox("{PLAYER} opened a book.\p"
+				   "Travel Tip 2: Choose SAVE from the\n"
+				   "menu to save your progress!$", MSGBOX_SIGN)
+		case 2:
+			msgbox("{PLAYER} opened a book.\p"
+				   "Travel Tip 3: Open your bag and\n"
+				   "press SELECT to move items.$", MSGBOX_SIGN)
+		case 3:
+			msgbox("{PLAYER} opened a book.\p"
+				   "Travel Tip 4: Check your POKéMON's\n"
+				   "moves and press A to switch their order.$", MSGBOX_SIGN)
+		default:
+			msgbox("It's a book that's too hard to read.$", MSGBOX_SIGN)
+	}
+}
+
+script EventScript_TrashCan {
+	msgbox("The wrapper from the snack PROF. IVY\n"
+		   "ate is in there…$", MSGBOX_SIGN)
+}
+
+script EventScript_WindowReflection {
+	msgbox("My reflection!\n"
+		   "Lookin' good!$", MSGBOX_SIGN)
+}

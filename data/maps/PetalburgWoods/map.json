@@ -1,0 +1,282 @@
+{
+    "allow_bike": true,
+    "allow_escape_rope": false,
+    "allow_running": true,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "bg_events": [
+        {
+            "elevation": 3,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "TangeloWoodsSign",
+            "type": "sign",
+            "x": 24,
+            "y": 40
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_HIDDEN_ITEM_PETALBURG_WOODS_POTION",
+            "item": "ITEM_POTION",
+            "type": "hidden_item",
+            "x": 14,
+            "y": 37
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_HIDDEN_ITEM_PETALBURG_WOODS_TINY_MUSHROOM_1",
+            "item": "ITEM_BIG_MUSHROOM",
+            "type": "hidden_item",
+            "x": 16,
+            "y": 29
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_HIDDEN_ITEM_PETALBURG_WOODS_TINY_MUSHROOM_2",
+            "item": "ITEM_TINY_MUSHROOM",
+            "type": "hidden_item",
+            "x": 36,
+            "y": 30
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_HIDDEN_ITEM_PETALBURG_WOODS_POKE_BALL",
+            "item": "ITEM_POKE_BALL",
+            "type": "hidden_item",
+            "x": 12,
+            "y": 21
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "TangeloWoodsHoneyTree",
+            "type": "sign",
+            "x": 28,
+            "y": 27
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "TangeloWoodsSign1",
+            "type": "sign",
+            "x": 33,
+            "y": 7
+        }
+    ],
+    "connections": null,
+    "coord_events": [
+        {
+            "elevation": 3,
+            "script": "TangeloWoodsCora",
+            "type": "trigger",
+            "var": "VAR_ROUTE105_STATE",
+            "var_value": "5",
+            "x": 23,
+            "y": 8
+        },
+        {
+            "elevation": 3,
+            "script": "TangeloWoodsCora",
+            "type": "trigger",
+            "var": "VAR_ROUTE105_STATE",
+            "var_value": "5",
+            "x": 23,
+            "y": 7
+        }
+    ],
+    "id": "MAP_PETALBURG_WOODS",
+    "layout": "LAYOUT_PETALBURG_WOODS",
+    "map_type": "MAP_TYPE_ROUTE",
+    "music": "MUS_ORANGE_WOODS",
+    "name": "PetalburgWoods",
+    "object_events": [
+        {
+            "elevation": 3,
+            "flag": "FLAG_TEMP_11",
+            "graphics_id": "EVENT_OBJ_GFX_CUTTABLE_TREE",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+            "script": "EventScript_CutTree",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 8,
+            "y": 43
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_YOUNGSTER",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+            "script": "TangeloWoodsYoungsterCyril",
+            "trainer_sight_or_berry_tree_id": "4",
+            "trainer_type": "1",
+            "x": 9,
+            "y": 14
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_BUG_CATCHER",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+            "script": "TangeloWoodsBugCatcherWilliam",
+            "trainer_sight_or_berry_tree_id": "3",
+            "trainer_type": "1",
+            "x": 12,
+            "y": 30
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_ITEM_PETALBURG_WOODS_GREAT_BALL",
+            "graphics_id": "EVENT_OBJ_GFX_ITEM_BALL",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+            "script": "PetalburgWoods_EventScript_ItemGreatBall",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 29,
+            "y": 13
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_BUG_CATCHER",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+            "script": "TangeloWoodsBugCatcherNess",
+            "trainer_sight_or_berry_tree_id": "2",
+            "trainer_type": "1",
+            "x": 37,
+            "y": 37
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_BUG_CATCHER",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+            "script": "TangeloWoodsBugCatcherJason",
+            "trainer_sight_or_berry_tree_id": "5",
+            "trainer_type": "1",
+            "x": 24,
+            "y": 15
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_ITEM_PETALBURD_WOODS_PARALYZE_HEAL",
+            "graphics_id": "EVENT_OBJ_GFX_ITEM_BALL",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+            "script": "PetalburgWoods_EventScript_ItemMiracleSeed",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 7,
+            "y": 47
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_MANIAC",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+            "script": "TangeloWoodsManiac",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 30,
+            "y": 23
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_BOY_1",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+            "script": "TangeloWoodsRichBoySal",
+            "trainer_sight_or_berry_tree_id": "5",
+            "trainer_type": "1",
+            "x": 31,
+            "y": 15
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_ANABEL",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_NONE",
+            "script": "NULL",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 43,
+            "y": 0
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_TANGELO_WOODS_CORA",
+            "graphics_id": "EVENT_OBJ_GFX_NORMAN",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_NONE",
+            "script": "NULL",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 28,
+            "y": 2
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_ITEM_PETALBURG_WOODS_ESCAPE_ROPE",
+            "graphics_id": "EVENT_OBJ_GFX_ITEM_BALL",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_NONE",
+            "script": "PetalburgWoods_EventScript_ItemEscapeRope",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 17,
+            "y": 3
+        }
+    ],
+    "region_map_section": "MAPSEC_PETALBURG_WOODS",
+    "requires_flash": false,
+    "show_map_name": true,
+    "warp_events": [
+        {
+            "dest_map": "MAP_PETALBURG_CITY_GATEHOUSE",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 30,
+            "y": 6
+        },
+        {
+            "dest_map": "MAP_PETALBURG_CITY_GATEHOUSE",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 31,
+            "y": 6
+        },
+        {
+            "dest_map": "MAP_ROUTE102_GATEHOUSE",
+            "dest_warp_id": 1,
+            "elevation": 0,
+            "x": 27,
+            "y": 44
+        },
+        {
+            "dest_map": "MAP_ROUTE102_GATEHOUSE",
+            "dest_warp_id": 1,
+            "elevation": 0,
+            "x": 26,
+            "y": 44
+        }
+    ],
+    "weather": "WEATHER_SHADE"
+}

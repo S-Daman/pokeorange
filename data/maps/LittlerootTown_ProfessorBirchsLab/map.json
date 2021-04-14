@@ -1,0 +1,302 @@
+{
+    "allow_bike": false,
+    "allow_escape_rope": false,
+    "allow_running": false,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "bg_events": [
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_WindowReflection",
+            "type": "sign",
+            "x": 4,
+            "y": 0
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_Bookshelves",
+            "type": "sign",
+            "x": 7,
+            "y": 1
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_Bookshelves",
+            "type": "sign",
+            "x": 0,
+            "y": 7
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_Bookshelves",
+            "type": "sign",
+            "x": 1,
+            "y": 7
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_Bookshelves",
+            "type": "sign",
+            "x": 2,
+            "y": 7
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_Bookshelves",
+            "type": "sign",
+            "x": 3,
+            "y": 7
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_WindowSeaBreeze",
+            "type": "sign",
+            "x": 6,
+            "y": 1
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_TrashCan",
+            "type": "sign",
+            "x": 10,
+            "y": 4
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_HealingMachine",
+            "type": "sign",
+            "x": 1,
+            "y": 2
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_HealingMachine",
+            "type": "sign",
+            "x": 0,
+            "y": 2
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_Bookshelves",
+            "type": "sign",
+            "x": 10,
+            "y": 1
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_Bookshelves",
+            "type": "sign",
+            "x": 9,
+            "y": 1
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_Bookshelves",
+            "type": "sign",
+            "x": 8,
+            "y": 1
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_HealingMachinePC",
+            "type": "sign",
+            "x": 2,
+            "y": 1
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_Bookshelves",
+            "type": "sign",
+            "x": 7,
+            "y": 7
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_Bookshelves",
+            "type": "sign",
+            "x": 8,
+            "y": 7
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_Bookshelves",
+            "type": "sign",
+            "x": 9,
+            "y": 7
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_Bookshelves",
+            "type": "sign",
+            "x": 10,
+            "y": 7
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "EventScript_RegionalFormsResearchPC",
+            "type": "sign",
+            "x": 3,
+            "y": 5
+        }
+    ],
+    "connections": null,
+    "coord_events": [
+        {
+            "elevation": 0,
+            "script": "TileScript_HopeGivesPokeBalls",
+            "type": "trigger",
+            "var": "VAR_ROUTE105_STATE",
+            "var_value": "2",
+            "x": 4,
+            "y": 8
+        },
+        {
+            "elevation": 0,
+            "script": "TileScript_StarterNotChosenYet",
+            "type": "trigger",
+            "var": "VAR_ROUTE105_STATE",
+            "var_value": "1",
+            "x": 5,
+            "y": 7
+        },
+        {
+            "elevation": 0,
+            "script": "TileScript_StarterNotChosenYet",
+            "type": "trigger",
+            "var": "VAR_ROUTE105_STATE",
+            "var_value": "1",
+            "x": 6,
+            "y": 7
+        },
+        {
+            "elevation": 0,
+            "script": "TileScript_StarterNotChosenYet",
+            "type": "trigger",
+            "var": "VAR_ROUTE105_STATE",
+            "var_value": "1",
+            "x": 4,
+            "y": 7
+        },
+        {
+            "elevation": 0,
+            "script": "TileScript_HopeGivesPokeBalls",
+            "type": "trigger",
+            "var": "VAR_ROUTE105_STATE",
+            "var_value": "2",
+            "x": 5,
+            "y": 8
+        },
+        {
+            "elevation": 0,
+            "script": "TileScript_HopeGivesPokeBalls",
+            "type": "trigger",
+            "var": "VAR_ROUTE105_STATE",
+            "var_value": "2",
+            "x": 6,
+            "y": 8
+        }
+    ],
+    "id": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+    "layout": "LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+    "map_type": "MAP_TYPE_INDOOR",
+    "music": "MUS_ORANGE_LAB",
+    "name": "LittlerootTown_ProfessorBirchsLab",
+    "object_events": [
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_OLD_WOMAN",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_NONE",
+            "script": "EventScript_Ivy",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 5,
+            "y": 4
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_ROOFTOP_SALE_WOMAN",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+            "script": "EventScript_Hope",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 3,
+            "y": 9
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CYNDAQUIL",
+            "graphics_id": "EVENT_OBJ_GFX_ITEM_BALL",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+            "script": "EventScript_Cyndaquil",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 7,
+            "y": 4
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TOTODILE",
+            "graphics_id": "EVENT_OBJ_GFX_ITEM_BALL",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+            "script": "EventScript_Totodile",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 8,
+            "y": 4
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CHIKORITA",
+            "graphics_id": "EVENT_OBJ_GFX_ITEM_BALL",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+            "script": "EventScript_Chikorita",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 9,
+            "y": 4
+        }
+    ],
+    "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+    "requires_flash": false,
+    "show_map_name": false,
+    "warp_events": [
+        {
+            "dest_map": "MAP_LITTLEROOT_TOWN",
+            "dest_warp_id": 2,
+            "elevation": 0,
+            "x": 5,
+            "y": 11
+        }
+    ],
+    "weather": "WEATHER_NONE"
+}

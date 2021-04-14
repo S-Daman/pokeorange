@@ -1,0 +1,124 @@
+{
+    "allow_bike": false,
+    "allow_escape_rope": false,
+    "allow_running": false,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "bg_events": [
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "VerdanturfTown_BattleTentLobby_EventScript_201B02",
+            "type": "sign",
+            "x": 4,
+            "y": 5
+        }
+    ],
+    "connections": null,
+    "coord_events": [
+    ],
+    "id": "MAP_VERDANTURF_TOWN_BATTLE_TENT_LOBBY",
+    "layout": "LAYOUT_BATTLE_TENT_LOBBY",
+    "map_type": "MAP_TYPE_INDOOR",
+    "music": "MUS_B_TOWER",
+    "name": "VerdanturfTown_BattleTentLobby",
+    "object_events": [
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_EXPERT_M",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+            "script": "VerdanturfTown_BattleTentLobby_EventScript_201873",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 6,
+            "y": 5
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_GIRL_1",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+            "script": "VerdanturfTown_BattleTentLobby_EventScript_201A7B",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 0,
+            "y": 5
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_BOY_3",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+            "script": "VerdanturfTown_BattleTentLobby_EventScript_201ABC",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 9,
+            "y": 7
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_BOY_2",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+            "script": "VerdanturfTown_BattleTentLobby_EventScript_201AC5",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 1,
+            "y": 8
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_HIDE_VERDANTURF_TOWN_SCOTT",
+            "graphics_id": "EVENT_OBJ_GFX_SCOTT",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+            "script": "VerdanturfTown_BattleTentLobby_EventScript_201AD0",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 12,
+            "y": 6
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_LITTLE_BOY",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+            "script": "VerdanturfTown_BattleTentLobby_EventScript_201AF7",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 2,
+            "y": 8
+        }
+    ],
+    "region_map_section": "MAPSEC_VERDANTURF_TOWN",
+    "requires_flash": false,
+    "show_map_name": false,
+    "warp_events": [
+        {
+            "dest_map": "MAP_VERDANTURF_TOWN",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 6,
+            "y": 9
+        },
+        {
+            "dest_map": "MAP_VERDANTURF_TOWN",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 7,
+            "y": 9
+        }
+    ],
+    "weather": "WEATHER_NONE"
+}

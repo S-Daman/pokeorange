@@ -1,0 +1,44 @@
+{
+    "allow_bike": false,
+    "allow_escape_rope": false,
+    "allow_running": false,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "bg_events": [
+    ],
+    "connections": null,
+    "coord_events": [
+    ],
+    "id": "MAP_RUSTBORO_CITY_CUTTERS_HOUSE",
+    "layout": "LAYOUT_RUSTBORO_CITY_CUTTERS_HOUSE",
+    "map_type": "MAP_TYPE_INDOOR",
+    "music": "MUS_FINECITY",
+    "name": "RustboroCity_CuttersHouse",
+    "object_events": [
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_MAN_4",
+            "movement_range_x": 3,
+            "movement_range_y": 4,
+            "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+            "script": "RustboroCity_CuttersHouse_EventScript_Soyboy",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 8,
+            "y": 4
+        }
+    ],
+    "region_map_section": "MAPSEC_RUSTBORO_CITY",
+    "requires_flash": false,
+    "show_map_name": false,
+    "warp_events": [
+        {
+            "dest_map": "MAP_RUSTBORO_CITY",
+            "dest_warp_id": 3,
+            "elevation": 0,
+            "x": 4,
+            "y": 7
+        }
+    ],
+    "weather": "WEATHER_NONE"
+}

@@ -1,0 +1,190 @@
+{
+    "allow_bike": true,
+    "allow_escape_rope": false,
+    "allow_running": true,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "bg_events": [
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "Route51Sign",
+            "type": "sign",
+            "x": 5,
+            "y": 45
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "Route51Sign1",
+            "type": "sign",
+            "x": 48,
+            "y": 12
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "Route51Sign2",
+            "type": "sign",
+            "x": 39,
+            "y": 63
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "Route51TrainerTips",
+            "type": "sign",
+            "x": 38,
+            "y": 53
+        }
+    ],
+    "connections": [
+        {
+            "direction": "left",
+            "map": "MAP_PETALBURG_CITY",
+            "offset": 25
+        },
+        {
+            "direction": "up",
+            "map": "MAP_DEWFORD_TOWN",
+            "offset": 23
+        },
+        {
+            "direction": "down",
+            "map": "MAP_RUSTBORO_CITY",
+            "offset": 7
+        }
+    ],
+    "coord_events": [
+        {
+            "elevation": 0,
+            "script": "Tracey51",
+            "type": "trigger",
+            "var": "VAR_ROUTE105_STATE",
+            "var_value": "6",
+            "x": 2,
+            "y": 47
+        },
+        {
+            "elevation": 0,
+            "script": "Tracey51",
+            "type": "trigger",
+            "var": "VAR_ROUTE105_STATE",
+            "var_value": "6",
+            "x": 2,
+            "y": 48
+        },
+        {
+            "elevation": 0,
+            "script": "Tracey51",
+            "type": "trigger",
+            "var": "VAR_ROUTE105_STATE",
+            "var_value": "6",
+            "x": 2,
+            "y": 49
+        }
+    ],
+    "id": "MAP_ROUTE103",
+    "layout": "LAYOUT_ROUTE103",
+    "map_type": "MAP_TYPE_ROUTE",
+    "music": "MUS_ORANGE_ROUTETWO",
+    "name": "Route103",
+    "object_events": [
+        {
+            "elevation": 3,
+            "flag": "FLAG_HIDE_TRACEY_103",
+            "graphics_id": "EVENT_OBJ_GFX_RICH_BOY",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+            "script": "NULL",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 8,
+            "y": 49
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_FISHERMAN",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+            "script": "Route51YoungsterAndrew",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 45,
+            "y": 6
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_SWIMMER_F",
+            "movement_range_x": 4,
+            "movement_range_y": 8,
+            "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_RIGHT_UP",
+            "script": "Route51YoungsterLola",
+            "trainer_sight_or_berry_tree_id": "4",
+            "trainer_type": "1",
+            "x": 46,
+            "y": 46
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_SWIMMER_M",
+            "movement_range_x": 4,
+            "movement_range_y": 4,
+            "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_UP_RIGHT_LEFT",
+            "script": "Route51YoungsterDuncan",
+            "trainer_sight_or_berry_tree_id": "3",
+            "trainer_type": "1",
+            "x": 24,
+            "y": 49
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_SWIMMER_M",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+            "script": "Route51YoungsterFranklin",
+            "trainer_sight_or_berry_tree_id": "7",
+            "trainer_type": "1",
+            "x": 51,
+            "y": 31
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_SWIMMER_F",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+            "script": "Route51YoungsterSally",
+            "trainer_sight_or_berry_tree_id": "7",
+            "trainer_type": "1",
+            "x": 43,
+            "y": 31
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_LASS",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+            "script": "Route51YoungsterEmily",
+            "trainer_sight_or_berry_tree_id": "3",
+            "trainer_type": "1",
+            "x": 48,
+            "y": 14
+        }
+    ],
+    "region_map_section": "MAPSEC_ROUTE_103",
+    "requires_flash": false,
+    "show_map_name": true,
+    "warp_events": [
+    ],
+    "weather": "WEATHER_SUNNY"
+}

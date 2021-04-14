@@ -1,0 +1,30 @@
+mapscripts PetalburgCity_House2_MapScripts {
+}
+
+script MikanOldRodFisherman {
+	lock
+	faceplayer
+	if (flag(FLAG_RECEIVED_OLD_ROD) == TRUE) {
+		msgbox("So, how goes the fishing?", MSGBOX_AUTOCLOSE)
+		release
+		end
+	}
+	msgbox("I can sense you have a knack\nat seafaring.\pHere, take this. It's one of my\nolder FISHING RODS.", MSGBOX_AUTOCLOSE)
+	giveitem_std(ITEM_OLD_ROD, 1, 0)
+	msgbox("Simply press the A Button if you get\na bite!", MSGBOX_AUTOCLOSE)
+	setflag(FLAG_RECEIVED_OLD_ROD)
+	release
+	end
+}
+
+
+script MikanShellder {		
+	lock
+	faceplayer
+	waitse
+	playmoncry(SPECIES_SHELLDER, 0)
+	msgbox("SHELLDER: Krrkrr!", MSGBOX_DEFAULT)
+	waitmoncry
+	release
+	end
+}

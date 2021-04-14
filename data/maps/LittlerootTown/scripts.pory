@@ -1,0 +1,208 @@
+mapscripts LittlerootTown_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+		removeobject(3)
+		setflag(FLAG_HIDEMOM)
+		if (flag(FLAG_SYS_POKEDEX_GET) == TRUE) {
+			clearflag(FLAG_HIDEMOM)
+			if (flag(FLAG_SYS_B_DASH) == TRUE) {
+				setflag(FLAG_HIDEMOM)
+			}
+			setobjectxyperm(1, 13, 16)
+			setobjectmovementtype(1, MOVEMENT_TYPE_WANDER_AROUND)
+		}
+	}	
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ROUTE106_STATE, 0 {
+			if (flag(FLAG_SYS_POKEDEX_GET) == TRUE) {
+				applymovement(3, MomApproachesPlayer)
+				applymovement(EVENT_OBJ_ID_PLAYER, SurprisedToSeeMom)
+				waitmovement(EVENT_OBJ_ID_PLAYER)
+				waitse
+				playse(SE_PIN)
+				waitse
+				waitmovement(3)
+				delay(10)
+				msgbox("MOM: Well done. You seem to have\npicked a strong POKéMON, {PLAYER}.\pNow that you are going on an adventure,\nI want you to have this.", MSGBOX_DEFAULT)
+				playfanfare(MUS_FANFA4)
+				message(SwitchedToRunningShoes)
+				waitfanfare
+				setflag(FLAG_RECEIVED_RUNNING_SHOES)
+				setflag(FLAG_SYS_B_DASH)
+				msgbox("MOM: Those shoes came with\ninstructions.\p“Press the B Button while wearing these\nRUNNING SHOES to run extra-fast!”\p“Slip on these RUNNING SHOES and race\nin the great outdoors!”", MSGBOX_DEFAULT)
+				msgbox("… … … … … … … …\n… … … … … … … …\pPlease be careful out there, {PLAYER}.\pI can tell you will be just fine.", MSGBOX_DEFAULT)
+				closemessage
+				delay(4)
+				applymovement(3, MomLeavesPlayer)
+				waitmovement(0)
+				setvar(VAR_ROUTE106_STATE, 1)
+				removeobject(3)
+				setflag(FLAG_HIDEMOM)
+			}
+			else {
+				setvar(VAR_ROUTE106_STATE, 1)
+			}
+		}
+	]
+}
+
+text SwitchedToRunningShoes {
+	"{PLAYER} switched shoes with the\n"
+	"RUNNING SHOES."
+}
+
+movement SurprisedToSeeMom {
+	delay_16
+	face_left
+	emote_exclamation_mark
+	step_end
+}
+
+movement MomApproachesPlayer {
+	walk_right * 6
+	step_end
+}
+
+movement MomLeavesPlayer {
+	walk_left * 7
+	step_end
+}
+
+script FatassHentaiPedoItaru {
+    lock
+	faceplayer
+	msgbox("The power of technology is amazing!\pIt is now possible to store\nPOKéMON and items as data via PC.", MSGBOX_AUTOCLOSE) 
+	release
+}
+
+script Pedo2 {
+    lock
+	faceplayer
+    if (flag(FLAG_SYS_POKEDEX_GET) == false) {
+        msgbox("{PLAYER}!\pPROF. IVY is waiting for you!", MSGBOX_AUTOCLOSE)
+    } else {
+        msgbox("Oh, nice POKéMON!\nIt looks so cool! I wish I had one.", MSGBOX_AUTOCLOSE)       
+    }
+    release
+}
+
+script Vaughn {
+    lock
+	faceplayer
+	msgbox("Pokemon Master cheater saala.\nVaughn Max randwa loda chodu bhagat\pAb hilane de mereko", MSGBOX_DEFAULT)
+	giveitem_std(ITEM_RARE_CANDY, 99, 0)
+	giveitem_std(ITEM_RARE_CANDY, 99, 0)
+	giveitem_std(ITEM_SUN_STONE, 1, 0)
+	giveitem_std(ITEM_FIRE_STONE, 1, 0)
+	giveitem_std(ITEM_THUNDER_STONE, 1, 0)
+	givemon(SPECIES_MAGIKARP, 19, ITEM_NONE)
+    release
+}
+
+script ValenciaIslandSign {
+    lock
+	msgbox("VALENCIA ISLAND\nSweet Taste of a New Beginning", MSGBOX_SIGN)
+	release
+}
+
+script ApnaGhar {
+    lock
+	msgbox("{PLAYER}'s House", MSGBOX_SIGN)
+	release
+}
+
+script IvyLab {
+    lock
+	msgbox("IVY RESEARCH LAB", MSGBOX_SIGN)
+	release
+}
+
+script PedoStopsYou {
+	lockall
+	applymovement(1, Pedo_Move_1)
+	playse(SE_PIN)
+	delay(64)
+	playbgm(MUS_TSURETEK, 0)
+	msgbox("Wait, {PLAYER}!", MSGBOX_AUTOCLOSE)
+	applymovement(1, Pedo_Move_2)
+	turnobject(EVENT_OBJ_ID_PLAYER, 4)
+	waitmovement(0)
+	getplayerxy (VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 17) {
+		applymovement(1, Pedo_Move_3)
+		waitmovement(0)
+		turnobject(EVENT_OBJ_ID_PLAYER, 2)
+		msgbox("What do you think you're doing?", MSGBOX_AUTOCLOSE)
+		applymovement(EVENT_OBJ_ID_PLAYER, Pedo_Move_4)
+		applymovement(1, Pedo_Move_5)
+		waitmovement(0)
+	}
+	if (var(VAR_TEMP_1) == 15) {
+		applymovement(1, Pedo_Move_6)
+		waitmovement(0)
+		turnobject(EVENT_OBJ_ID_PLAYER, 1)
+		msgbox("What do you think you're doing?", MSGBOX_AUTOCLOSE)
+		applymovement(EVENT_OBJ_ID_PLAYER, Pedo_Move_7)
+		applymovement(1, Pedo_Move_8)
+		waitmovement(0)	
+	}
+	applymovement(1, Pedo_Move_9)
+	applymovement(EVENT_OBJ_ID_PLAYER, Pedo_Move_9)
+	waitmovement(0)
+	turnobject(1, 3)
+	msgbox("It's dangerous to go out without a\nPOKéMON!\pIsn't PROF. IVY giving you a\nPOKéMON today?", MSGBOX_AUTOCLOSE)
+	fadedefaultbgm
+	if (flag(FLAG_SYS_POKEDEX_GET) == true) {
+		setvar(VAR_ROUTE105_STATE, 4)
+	}
+	releaseall
+}
+
+movement Pedo_Move_1 {
+	emote_exclamation_mark
+	face_left
+	step_end
+}
+
+movement Pedo_Move_2 {
+	walk_left * 5
+	step_end
+}
+
+movement Pedo_Move_3 {
+	walk_left
+	face_down
+	step_end
+}
+
+movement Pedo_Move_4 {
+	walk_up
+	face_right
+	step_end
+}
+
+movement Pedo_Move_5 {
+	walk_right
+	step_end
+}
+
+movement Pedo_Move_6 {
+	walk_left
+	face_up
+	step_end
+}
+
+movement Pedo_Move_7 {
+	walk_down
+	face_right
+	step_end
+}
+
+movement Pedo_Move_8 {
+	walk_right
+	step_end
+}
+
+movement Pedo_Move_9 {
+	walk_right *5
+	step_end
+}

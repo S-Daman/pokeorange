@@ -1,0 +1,20 @@
+mapscripts LittlerootTown_IvyHouse_MapScripts {}
+
+script Aide1 {
+    lock
+	faceplayer
+    if (flag(FLAG_SYS_POKEDEX_GET) == true) {
+        msgbox("{PLAYER}, now that you have your own\nPOKéMON, you should challenge\lPOKéMON GYMS all over the region!")
+    } else {
+        msgbox("{PLAYER}, aren't you excited to pick\nyour first POKéMON?\pI wonder which one you'll choose!")       
+    }
+    release
+}
+
+script Aide2 {
+    lock
+	faceplayer
+	msgbox("PROF. IVY's area of expertise is\nREGIONAL POKéMON FORMS.\pSome POKéMON take on different forms\nthan they do in other regions.") 
+	release
+}
+	

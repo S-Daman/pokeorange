@@ -1,0 +1,53 @@
+mapscripts PetalburgCity_MapScripts {
+}
+
+script MikanSenta {
+    lock
+	faceplayer
+	if(flag(FLAG_BADGE01_GET) == TRUE) {
+		msgbox("Hmph! I acknowledge your skill…\pRematch my sister anytime you want to!", MSGBOX_AUTOCLOSE)
+		release
+		end
+	}
+	msgbox("My sister, CISSY, is the strongest\nTRAINER I know!\pFat chance you can beat her!", MSGBOX_AUTOCLOSE) 
+	release
+}
+
+script MikanGirl {
+    lock
+	faceplayer
+	msgbox("There is word that HORSEA were spotted\nin the pond behind the GYM.", MSGBOX_AUTOCLOSE) 
+	release
+}
+
+script MikanBoy {
+    lock
+	faceplayer
+	msgbox("Hey, you're a fresh POKéMON TRAINER?\pThere's a GYM here.\nYou should go check it out!", MSGBOX_AUTOCLOSE) 
+	release
+}
+
+script MikanSkipSchoolGirl {
+    lock
+	faceplayer
+	msgbox("Want to know a little secret?\pI skipped school today! Hehehe…", MSGBOX_AUTOCLOSE) 
+	release
+}
+
+script MikanSign {
+    lock
+	msgbox("MIKAN ISLAND\nA Delicate First Step Forward", MSGBOX_SIGN)
+	release
+}
+
+script MikanGymSign {
+    lock
+	msgbox("MIKAN ISLAND POKéMON GYM\nLEADER: CISSY\lThe ORANGE CREW's Water Beauty!", MSGBOX_SIGN)
+	release
+}
+
+script MikanSchool {
+    lock
+	msgbox("MIKAN ISLAND POKéMON SCHOOL", MSGBOX_SIGN)
+	release
+}

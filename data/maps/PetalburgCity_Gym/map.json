@@ -1,0 +1,24 @@
+{
+    "allow_bike": false,
+    "allow_escape_rope": false,
+    "allow_running": false,
+    "battle_scene": "MAP_BATTLE_SCENE_GYM",
+    "bg_events": [
+    ],
+    "connections": null,
+    "coord_events": [
+    ],
+    "id": "MAP_PETALBURG_CITY_GYM",
+    "layout": "LAYOUT_PETALBURG_CITY_GYM",
+    "map_type": "MAP_TYPE_INDOOR",
+    "music": "MUS_GIM",
+    "name": "PetalburgCity_Gym",
+    "object_events": [
+    ],
+    "region_map_section": "MAPSEC_PETALBURG_CITY",
+    "requires_flash": false,
+    "show_map_name": false,
+    "warp_events": [
+    ],
+    "weather": "WEATHER_NONE"
+}

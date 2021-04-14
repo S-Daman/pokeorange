@@ -1,0 +1,39 @@
+mapscripts DewfordTown_MapScripts {
+}
+
+script MandarinNorthGirl1 {
+	lock
+	faceplayer
+	msgbox("I'm not sure why this place is called\nMANDARIN ISLAND NORTH.\pMANDARIN ISLAND SOUTH is quite far\nfrom here.", MSGBOX_AUTOCLOSE)
+	release
+	end
+}
+
+script MandarinNorthGirl2 {
+	lock
+	faceplayer
+	msgbox("The ocean is so mesmerizing.\nI could gaze into it for eternity.", MSGBOX_AUTOCLOSE)
+	applymovement(4, MandarinGirl2_Move1)
+	waitmovement(0)
+	release
+	end
+}
+
+movement MandarinGirl2_Move1 {
+	face_down
+	step_end
+}
+
+script MandarinWarehouseSign {
+	lock
+	msgbox("SILPH CO. WAREHOUSE\n“Trespassers will be punished!”", MSGBOX_AUTOCLOSE)
+	release
+	end
+}
+
+script MandarinIslandNorthSign {
+	lock
+	msgbox("MANDARIN ISLAND NORTH\nLoosen Up and Discover Inner Peace", MSGBOX_AUTOCLOSE)
+	release
+	end
+}

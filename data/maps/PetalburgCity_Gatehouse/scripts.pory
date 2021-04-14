@@ -1,0 +1,8 @@
+mapscripts PetalburgCity_Gatehouse_MapScripts {}
+
+script MikanGatePoliceman {
+    lock
+	faceplayer
+	msgbox("I heard a rumour that PIKACHU appear\nin TANGELO WOODS.\pFor some reason, they have the\ncry of HOOTHOOT, though.", MSGBOX_AUTOCLOSE) 
+	release
+}

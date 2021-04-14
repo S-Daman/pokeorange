@@ -1,0 +1,61 @@
+mapscripts Route101_Port_MapScripts {}
+
+script Route49PortSailor {
+	lock 
+	faceplayer
+	msgbox("Hey, kid! Do you need a ride to\nTANGELO ISLAND?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == 1) {
+		msgbox("Alright! Off we go!", MSGBOX_AUTOCLOSE)
+		applymovement(VAR_LAST_TALKED, Common_Movement_WalkInPlaceFastestUp)
+		waitmovement(0)
+		delay(30)
+		hideobjectat(VAR_LAST_TALKED, MAP_ROUTE101_PORT)
+		if (var(VAR_FACING) == 2) {
+			applymovement(EVENT_OBJ_ID_PLAYER, Route49PlayerBoard1)
+			waitmovement(0)	
+		}
+		if (var(VAR_FACING) == 4) {
+			applymovement(EVENT_OBJ_ID_PLAYER, Route49PlayerBoard2)
+			waitmovement(0)	
+		}
+		delay(30)
+		hideobjectat(EVENT_OBJ_ID_PLAYER, MAP_PETALBURG_CITY)
+		delay(60)
+		applymovement(3, Route49BoatMovement)
+		PlaySE(SE_NAMINORI)
+		waitmovement(0)
+		delay(25)
+		warp(MAP_OLDALE_TOWN_PORT, 255, 16, 10)
+		waitstate
+		release
+		end
+	}
+	else {
+		msgbox("Aye, as you like it, then.", MSGBOX_AUTOCLOSE)
+	}
+	release
+	end
+}
+
+movement Route49PlayerBoard1 {
+	walk_up
+	step_end
+}
+
+movement Route49PlayerBoard2 {
+	walk_right
+	walk_in_place_fastest_up
+	step_end
+}
+
+movement Route49BoatMovement {
+	walk_fast_left * 10
+	step_end
+}
+
+script Route49PortFisherman {
+    lock
+	faceplayer
+	msgbox("They say you aren't allowed to\nfish in ports.\pThat's so unfair, don't you think?", MSGBOX_AUTOCLOSE) 
+	release
+}

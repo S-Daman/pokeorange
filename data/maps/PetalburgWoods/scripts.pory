@@ -1,0 +1,510 @@
+mapscripts PetalburgWoods_MapScripts {}
+
+
+script TangeloWoodsManiac {
+    lock
+	faceplayer
+	msgbox("Oh, no! I got lost!\nIt's my fault, really…\pI was just trying to catch a SLAKOTH!", MSGBOX_AUTOCLOSE) 
+	release
+}
+
+script TangeloWoodsSign1 {
+    lock
+	msgbox("TANGELO WOODS\n{UP_ARROW} MIKAN ISLAND", MSGBOX_SIGN)
+	release
+}
+
+script TangeloWoodsSign {
+    lock
+	msgbox("TRAINER TIPS\pEvery once in a while, there are\nthings on the ground even if you can't\lsee them.\pAlways check where you're walking by\npressing the A Button.", MSGBOX_SIGN)
+	release
+}
+
+script TangeloWoodsHoneyTree {
+    lock
+	msgbox("This tree looks like it can be\nslathered with HONEY!", MSGBOX_SIGN)
+	release
+}
+
+
+script TangeloWoodsYoungsterCyril {
+	trainerbattle_single(TRAINER_BILLY, Route104_Text_BillyIntro, Route104_Text_BillyDefeat, Route104_Billy_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route104_Billy_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route104_Billy_CheckMatchCall2)
+	}
+	msgbox(Route104_Text_BillyPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route104_Billy_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route104_Billy_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route104_Billy_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_BILLY)
+	release
+	end
+}
+
+script Route104_Billy_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route104_Billy_RegisterMatchCall)
+	}
+	msgbox(Route104_Text_BillyPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route104_Billy_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_BILLY)
+	release
+	end
+}
+
+script Route104_Billy_Rematch {
+	trainerbattle_rematch(TRAINER_BILLY, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+
+
+
+
+script TangeloWoodsRichBoySal {
+	trainerbattle_single(TRAINER_WINSTON_1, Route104_Text_WinstonIntro, Route104_Text_WinstonDefeat, Route104_Winston_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route104_Winston_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route104_Winston_CheckMatchCall2)
+	}
+	msgbox(Route104_Text_WinstonPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route104_Winston_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route104_Winston_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route104_Winston_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_WINSTON_1)
+	release
+	end
+}
+
+script Route104_Winston_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route104_Winston_RegisterMatchCall)
+	}
+	msgbox(Route104_Text_WinstonPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route104_Winston_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_WINSTON_1)
+	release
+	end
+}
+
+script Route104_Winston_Rematch {
+	trainerbattle_rematch(TRAINER_WINSTON_1, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+
+
+
+
+script TangeloWoodsBugCatcherJason {
+	trainerbattle_single(TRAINER_LYLE, TangeloWoods_Text_LyleIntro, TangeloWoods_Text_LyleDefeat, Route104_Lyle_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route104_Lyle_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route104_Lyle_CheckMatchCall2)
+	}
+	msgbox(TangeloWoods_Text_LylePostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route104_Lyle_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route104_Lyle_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route104_Lyle_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_LYLE)
+	release
+	end
+}
+
+script Route104_Lyle_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route104_Lyle_RegisterMatchCall)
+	}
+	msgbox(TangeloWoods_Text_LylePostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route104_Lyle_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_LYLE)
+	release
+	end
+}
+
+script Route104_Lyle_Rematch {
+	trainerbattle_rematch(TRAINER_LYLE, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text TangeloWoods_Text_LyleIntro {
+	"This place is great!\n"
+	"You can catch some rare finds!$"
+}
+
+text TangeloWoods_Text_LyleDefeat {
+	"I guess I should focus on strength\n"
+	"rather than rarity.$"
+}
+
+text TangeloWoods_Text_LylePostBattle {
+	"Y'know, if you don't like BUG POKéMON,\n"
+	"there are others here, too!$"
+}
+
+
+
+
+
+script TangeloWoodsBugCatcherWilliam {
+	trainerbattle_single(TRAINER_JAMES_1, TangeloWoods_Text_JamesIntro, TangeloWoods_Text_JamesDefeat, Route104_James_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route104_James_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route104_James_CheckMatchCall2)
+	}
+	msgbox(TangeloWoods_Text_JamesPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route104_James_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route104_James_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route104_James_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_JAMES_1)
+	release
+	end
+}
+
+script Route104_James_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route104_James_RegisterMatchCall)
+	}
+	msgbox(TangeloWoods_Text_JamesPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route104_James_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_JAMES_1)
+	release
+	end
+}
+
+script Route104_James_Rematch {
+	trainerbattle_rematch(TRAINER_JAMES_1, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text TangeloWoods_Text_JamesIntro {
+	"Yo, yo, yo!\n"
+	"Check out my BUG POKéMON collection!$"
+}
+
+text TangeloWoods_Text_JamesDefeat {
+	"I never said I could battle…$"
+}
+
+text TangeloWoods_Text_JamesPostBattle {
+	"I'm going to catch every single\n"
+	"BUG POKéMON out there!$"
+}
+
+
+
+
+
+script TangeloWoodsBugCatcherNess {
+	trainerbattle_single(TRAINER_JOSE, Route116_Text_JoseIntro, Route116_Text_JoseDefeat, Route104_Jose_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route104_Jose_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route104_Jose_CheckMatchCall2)
+	}
+	msgbox(Route116_Text_JosePostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route104_Jose_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route104_Jose_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route104_Jose_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_JOSE)
+	release
+	end
+}
+
+script Route104_Jose_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route104_Jose_RegisterMatchCall)
+	}
+	msgbox(Route116_Text_JosePostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route104_Jose_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_JOSE)
+	release
+	end
+}
+
+script Route104_Jose_Rematch {
+	trainerbattle_rematch(TRAINER_JOSE, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+script TangeloWoodsCora {
+	lockall
+	setflag(FLAG_HIDE_TRACEY_103)
+	applymovement(EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	getplayerxy (VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 7) {
+		fadenewbgm(0)
+		setobjectxy(11, 30, 6)
+		waitse
+		playse(SE_KAIDAN)
+		waitse
+		applymovement(11, TangeloWoodsCoraMove1)
+		waitmovement(0)
+		playbgm(MUS_CORA_ENCOUNTER, 1)
+		msgbox("Out of my way, I need to obtain\nsomething really important!\pI can stop at nothing, so I must\nbecome stronger.\p… … … … … … … …\n… … … … … … … …\pYou look like the perfect\npunching bag who might put up a\ldecent fight.\pAllow me to test my skills!", MSGBOX_DEFAULT)
+		if (flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CYNDAQUIL) == TRUE) {
+			trainerbattle_no_intro(TRAINER_BRENDAN_7, TangeloWoodsCoraDefeated)
+			goto(TangeloWoodsCoraAfterBattle)
+		}
+		if (flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TOTODILE) == TRUE) {
+			trainerbattle_no_intro(TRAINER_BRENDAN_1, TangeloWoodsCoraDefeated)
+			goto(TangeloWoodsCoraAfterBattle)
+		}
+		if (flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CHIKORITA) == TRUE) {
+			trainerbattle_no_intro(TRAINER_BRENDAN_4, TangeloWoodsCoraDefeated)
+			goto(TangeloWoodsCoraAfterBattle)
+		}		
+	}
+	if (var(VAR_TEMP_1) == 8) {
+		fadenewbgm(0)
+		setobjectxy(11, 30, 6)
+		waitse
+		playse(SE_KAIDAN)
+		waitse
+		applymovement(11, TangeloWoodsCoraMove2)
+		waitmovement(0)
+		playbgm(MUS_CORA_ENCOUNTER, 1)
+		msgbox("Out of my way, I need to obtain\nsomething really important!\pI can stop at nothing, so I must\nbecome stronger.\p… … … … … … … …\n… … … … … … … …\pYou look like the perfect\npunching bag who might put up a\ldecent fight.\pAllow me to test my skills!", MSGBOX_DEFAULT)
+		if (flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CYNDAQUIL) == TRUE) {
+			trainerbattle_no_intro(TRAINER_BRENDAN_7, TangeloWoodsCoraDefeated)
+			goto(TangeloWoodsCoraAfterBattle2)
+		}
+		if (flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TOTODILE) == TRUE) {
+			trainerbattle_no_intro(TRAINER_BRENDAN_1, TangeloWoodsCoraDefeated)
+			goto(TangeloWoodsCoraAfterBattle2)
+		}
+		if (flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CHIKORITA) == TRUE) {
+			trainerbattle_no_intro(TRAINER_BRENDAN_4, TangeloWoodsCoraDefeated)
+			goto(TangeloWoodsCoraAfterBattle2)
+		}
+	}	
+	releaseall
+	end
+}
+
+text TangeloWoodsCoraDefeated {
+	"That's far from enough…"
+}
+
+script TangeloWoodsCoraAfterBattle {
+	msgbox("You win this time, but I'll get\nstronger.\pOtherwise, I'll never achieve my goals!", MSGBOX_AUTOCLOSE)
+	release
+	applymovement(EVENT_OBJ_ID_PLAYER, TangeloWoodsPlayerMove1)
+	applymovement(11, TangeloWoodsCoraMove3)
+	waitmovement(11)
+	removeobject(11)
+	fadeoutbgm(1)
+	playbgm(MUS_ORANGE_WOODS, 1)
+	setvar(VAR_ROUTE105_STATE, 6)
+	setflag(FLAG_TANGELO_LAPRAS)
+	releaseall 
+	end
+}
+
+script TangeloWoodsCoraAfterBattle2 {
+	msgbox("You win this time, but I'll get\nstronger.\pOtherwise, I'll never achieve my goals!", MSGBOX_AUTOCLOSE)
+	release
+	applymovement(EVENT_OBJ_ID_PLAYER, TangeloWoodsPlayerMove2)
+	applymovement(11, TangeloWoodsCoraMove4)
+	waitmovement(11)
+	removeobject(11)
+	fadeoutbgm(1)
+	playbgm(MUS_ORANGE_WOODS, 1)
+	setvar(VAR_ROUTE105_STATE, 6)
+	setflag(FLAG_TANGELO_LAPRAS)
+	releaseall 
+	end
+}
+
+movement TangeloWoodsCoraMove1 {
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+}
+
+movement TangeloWoodsCoraMove2 {
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+}
+
+movement TangeloWoodsPlayerMove1 {
+	walk_down
+	face_left
+	step_end
+}
+
+movement TangeloWoodsCoraMove3 {
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+}
+
+movement TangeloWoodsPlayerMove2 {
+	walk_up
+	face_left
+	step_end
+}
+
+movement TangeloWoodsCoraMove4 {
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+}

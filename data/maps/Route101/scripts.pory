@@ -1,0 +1,631 @@
+mapscripts Route101_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+		if (flag(FLAG_TUTGUY_SCRIPT2) == TRUE || flag(FLAG_TUTGUY_SCRIPT) == TRUE) {
+			setobjectxyperm(3, 57, 25)
+			setobjectmovementtype(3, MOVEMENT_TYPE_WANDER_AROUND)
+		}
+    }
+}
+
+script TutGuyTile {
+	clearflag(FLAG_TUTGUY_SCRIPT)
+	setvar(VAR_ROUTE105_STATE, 4)
+	getplayerxy (VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 21) {
+		applymovement(EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		applymovement(3, TutGuyTile_Move_1)
+		waitmovement(0)
+		waitse
+		playse(SE_PIN)
+		waitse
+		applymovement(3, TutGuyTile_Move_2)
+		waitmovement(0)
+		turnobject(EVENT_OBJ_ID_PLAYER, 3)
+		msgbox("Hey, {PLAYER}!\nThat's a cool POKéMON you've got.\pWould you like me to demonstrate\nhow a POKéMON is caught?", MSGBOX_YESNO)
+		if (var(VAR_RESULT) == 0) {
+			msgbox("Ah. That's alright.\pAnyway, if you ever want to learn how\nto catch POKéMON, just let me\lknow.", MSGBOX_AUTOCLOSE)
+			applymovement(3, TutGuyTile_Move_10)
+			waitmovement(0)
+			release
+			end
+		}
+		release
+		applymovement(3, TutGuyTile_Move_3)
+		waitmovement(0)
+		waitse
+		playse(SE_PIN)
+		waitse
+		delay(5)
+		//wally catch tut
+		special(SavePlayerParty)
+		special(PutZigzagoonInPlayerParty)
+		special(StartWallyTutorialBattle)
+		waitstate
+		lock
+		faceplayer
+		applymovement(3, TutGuyTile_Move_4)
+		waitmovement(0)
+		msgbox("That's how it's done!\pThey are easier to catch if you\nweaken them first.", MSGBOX_AUTOCLOSE)
+		applymovement(3, TutGuyTile_Move_5)
+		waitmovement(0)
+		special(LoadPlayerParty)
+		setflag(FLAG_TUTGUY_SCRIPT)
+		releaseall
+		end
+	}
+	if (var(VAR_TEMP_1) == 22) {
+		applymovement(EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		applymovement(3, TutGuyTile_Move_1)
+		waitmovement(0)
+		waitse
+		playse(SE_PIN)
+		waitse
+		applymovement(3, TutGuyTile_Move_6)
+		waitmovement(0)
+		turnobject(EVENT_OBJ_ID_PLAYER, 3)
+		msgbox("Hey, {PLAYER}!\nThat's a cool POKéMON you've got.\pWould you like me to demonstrate\nhow a POKéMON is caught?", MSGBOX_YESNO)
+		if (var(VAR_RESULT) == 0) {
+			msgbox("Ah. That's alright.\pAnyway, if you ever want to learn how\nto catch POKéMON, just let me\lknow.", MSGBOX_AUTOCLOSE)
+			applymovement(3, TutGuyTile_Move_11)
+			waitmovement(0)
+			release
+			end
+		}
+		release
+		applymovement(3, TutGuyTile_Move_3)
+		waitmovement(0)
+		waitse
+		playse(SE_PIN)
+		waitse
+		delay(5)
+		//wally catch tut
+		special(SavePlayerParty)
+		special(PutZigzagoonInPlayerParty)
+		special(StartWallyTutorialBattle)
+		waitstate
+		lock
+		faceplayer
+		applymovement(3, TutGuyTile_Move_4)
+		waitmovement(0)
+		msgbox("That's how it's done!\pThey are easier to catch if you\nweaken them first.", MSGBOX_AUTOCLOSE)
+		applymovement(3, TutGuyTile_Move_7)
+		waitmovement(0)
+		special(LoadPlayerParty)
+		setflag(FLAG_TUTGUY_SCRIPT)
+		releaseall
+		end
+	}
+	if (var(VAR_TEMP_1) == 23) {
+		applymovement(EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		applymovement(3, TutGuyTile_Move_1)
+		waitmovement(0)
+		waitse
+		playse(SE_PIN)
+		waitse
+		applymovement(3, TutGuyTile_Move_8)
+		waitmovement(0)
+		turnobject(EVENT_OBJ_ID_PLAYER, 3)
+		msgbox("Hey, {PLAYER}!\nThat's a cool POKéMON you've got.\pWould you like me to demonstrate\nhow a POKéMON is caught?", MSGBOX_YESNO)
+		if (var(VAR_RESULT) == 0) {
+			msgbox("Ah. That's alright.\pAnyway, if you ever want to learn how\nto catch POKéMON, just let me\lknow.", MSGBOX_AUTOCLOSE)
+			applymovement(3, TutGuyTile_Move_12)
+			waitmovement(0)
+			release
+			end
+		}
+		release
+		applymovement(3, TutGuyTile_Move_3)
+		waitmovement(0)
+		waitse
+		playse(SE_PIN)
+		waitse
+		delay(5)
+		//wally catch tut
+		special(SavePlayerParty)
+		special(PutZigzagoonInPlayerParty)
+		special(StartWallyTutorialBattle)
+		waitstate
+		lock
+		faceplayer
+		applymovement(3, TutGuyTile_Move_4)
+		waitmovement(0)
+		msgbox("That's how it's done!\pThey are easier to catch if you\nweaken them first.", MSGBOX_AUTOCLOSE)
+		applymovement(3, TutGuyTile_Move_9)
+		waitmovement(0)
+		special(LoadPlayerParty)
+		setflag(FLAG_TUTGUY_SCRIPT)
+		releaseall
+		end
+	}
+	if (var(VAR_TEMP_0) == 62) {
+		applymovement(EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp)
+		waitmovement(0)
+		applymovement(3, TutGuyTile_Move_1)
+		waitmovement(0)
+		waitse
+		playse(SE_PIN)
+		waitse
+		applymovement(3, TutGuyTile_Hori_Move_6)
+		waitmovement(0)
+		turnobject(EVENT_OBJ_ID_PLAYER, 1)
+		msgbox("Hey, {PLAYER}!\nThat's a cool POKéMON you've got.\pWould you like me to demonstrate\nhow a POKéMON is caught?", MSGBOX_YESNO)		
+		if (var(VAR_RESULT) == 0) {
+			msgbox("Ah. That's alright.\pAnyway, if you ever want to learn how\nto catch POKéMON, just let me\lknow.", MSGBOX_AUTOCLOSE)
+			applymovement(3, TutGuyTile_Hori_Move_11)
+			waitmovement(0)
+			release
+			end
+		}
+		release
+		applymovement(3, TutGuyTile_Hori_Move_3)
+		waitmovement(0)
+		waitse
+		playse(SE_PIN)
+		waitse
+		delay(5)
+		//wally catch tut
+		special(SavePlayerParty)
+		special(PutZigzagoonInPlayerParty)
+		special(StartWallyTutorialBattle)
+		waitstate
+		lock
+		faceplayer
+		applymovement(3, TutGuyTile_Hori_Move_4)
+		waitmovement(0)
+		msgbox("That's how it's done!\pThey are easier to catch if you\nweaken them first.", MSGBOX_AUTOCLOSE)
+		applymovement(3, TutGuyTile_Hori_Move_7)
+		waitmovement(0)
+		special(LoadPlayerParty)
+		setflag(FLAG_TUTGUY_SCRIPT)
+		releaseall
+		end		
+	}
+	if (var(VAR_TEMP_0) == 63) {
+		applymovement(EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp)
+		waitmovement(0)
+		applymovement(3, TutGuyTile_Move_1)
+		waitmovement(0)
+		waitse
+		playse(SE_PIN)
+		waitse
+		applymovement(3, TutGuyTile_Hori_Move_8)
+		waitmovement(0)
+		turnobject(EVENT_OBJ_ID_PLAYER, 1)
+		msgbox("Hey, {PLAYER}!\nThat's a cool POKéMON you've got.\pWould you like me to demonstrate\nhow a POKéMON is caught?", MSGBOX_YESNO)		
+		if (var(VAR_RESULT) == 0) {
+			msgbox("Ah. That's alright.\pAnyway, if you ever want to learn how\nto catch POKéMON, just let me\lknow.", MSGBOX_AUTOCLOSE)
+			applymovement(3, TutGuyTile_Hori_Move_11)
+			waitmovement(0)
+			release
+			end
+		}
+		release
+		applymovement(3, TutGuyTile_Hori_Move_3)
+		waitmovement(0)
+		waitse
+		playse(SE_PIN)
+		waitse
+		delay(5)
+		//wally catch tut
+		special(SavePlayerParty)
+		special(PutZigzagoonInPlayerParty)
+		special(StartWallyTutorialBattle)
+		waitstate
+		lock
+		faceplayer
+		applymovement(3, TutGuyTile_Hori_Move_4)
+		waitmovement(0)
+		msgbox("That's how it's done!\pThey are easier to catch if you\nweaken them first.", MSGBOX_AUTOCLOSE)
+		applymovement(3, TutGuyTile_Hori_Move_9)
+		waitmovement(0)
+		special(LoadPlayerParty)
+		setflag(FLAG_TUTGUY_SCRIPT)
+		releaseall
+		end	
+	}	
+}
+
+movement TutGuyTile_Move_1 {
+	emote_exclamation_mark
+	step_end
+}
+
+movement TutGuyTile_Move_2 {
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	step_end
+}
+
+movement TutGuyTile_Move_3 {
+	face_up
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_left
+	emote_exclamation_mark
+	step_end
+}
+
+movement TutGuyTile_Move_4 {
+	face_right
+	step_end
+}
+
+movement TutGuyTile_Move_5 {
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	step_end
+}
+
+movement TutGuyTile_Move_6 {
+	walk_right
+	walk_right
+	walk_right
+	step_end
+}
+
+movement TutGuyTile_Move_7 {
+	walk_left
+	walk_left
+	walk_left
+	step_end
+}
+
+movement TutGuyTile_Move_8 {
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	step_end
+}
+
+movement TutGuyTile_Move_9 {
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	step_end
+}
+
+movement TutGuyTile_Move_10 {
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	step_end
+}
+
+movement TutGuyTile_Move_11 {
+	walk_left
+	walk_left
+	walk_left
+	step_end
+}
+
+movement TutGuyTile_Move_12 {
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	step_end
+}
+
+movement TutGuyTile_Hori_Move_3 {
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_right
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_down
+	emote_exclamation_mark
+	step_end
+}
+
+movement TutGuyTile_Hori_Move_4 {
+	face_up
+	step_end
+}
+
+movement TutGuyTile_Hori_Move_6 {
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_up
+	step_end 
+}
+
+movement TutGuyTile_Hori_Move_7 {
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+}
+
+movement TutGuyTile_Hori_Move_8 {
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_up
+	step_end
+}
+
+movement TutGuyTile_Hori_Move_9 {
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	step_end
+}
+
+movement TutGuyTile_Hori_Move_11 {
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	step_end
+}
+
+
+script TutGuy {
+	lock
+	faceplayer
+	if (flag(FLAG_TUTGUY_SCRIPT)== FALSE) {
+		if (flag(FLAG_TUTGUY_SCRIPT2)== TRUE) {
+			faceplayer
+			msgbox("Be careful out there, {PLAYER}.\pI hear there are some shady\ncharacters around.", MSGBOX_AUTOCLOSE)
+			release
+			end
+		}
+		if (var(VAR_FACING) == 1) {
+			msgbox("{PLAYER}!\pWould you like me to demonstrate\nhow a POKéMON is caught?", MSGBOX_YESNO)		
+			if (var(VAR_RESULT) == 0) {
+				msgbox("Ah. That's alright.\pAnyway, if you ever want to learn how\nto catch POKéMON, just let me\lknow.", MSGBOX_AUTOCLOSE)
+				release
+				end
+			}
+			release
+			applymovement(3, TutGuy_Move_1)
+			waitmovement(0)
+			waitse
+			playse(SE_PIN)
+			waitse
+			delay(5)
+			//wally catch tut
+			special(SavePlayerParty)
+			special(PutZigzagoonInPlayerParty)
+			special(StartWallyTutorialBattle)
+			waitstate
+			lock
+			faceplayer
+			msgbox("That's how it's done!\pThey are easier to catch if you\nweaken them first.", MSGBOX_AUTOCLOSE)
+			special(LoadPlayerParty)
+			setflag(FLAG_TUTGUY_SCRIPT2)
+			releaseall
+			end	
+		}
+		if (var(VAR_FACING) == 2) {
+			msgbox("{PLAYER}!\pWould you like me to demonstrate\nhow a POKéMON is caught?", MSGBOX_YESNO)		
+			if (var(VAR_RESULT) == 0) {
+				msgbox("Ah. That's alright.\pAnyway, if you ever want to learn how\nto catch POKéMON, just let me\lknow.", MSGBOX_AUTOCLOSE)
+				release
+				end
+			}
+			release
+			applymovement(3, TutGuy_Move_2)
+			waitmovement(0)
+			waitse
+			playse(SE_PIN)
+			waitse
+			delay(5)
+			//wally catch tut
+			special(SavePlayerParty)
+			special(PutZigzagoonInPlayerParty)
+			special(StartWallyTutorialBattle)
+			waitstate
+			lock
+			faceplayer
+			msgbox("That's how it's done!\pThey are easier to catch if you\nweaken them first.", MSGBOX_AUTOCLOSE)
+			special(LoadPlayerParty)
+			setflag(FLAG_TUTGUY_SCRIPT2)
+			releaseall
+			end	
+		}
+		if (var(VAR_FACING) == 3) {
+			msgbox("{PLAYER}!\pWould you like me to demonstrate\nhow a POKéMON is caught?", MSGBOX_YESNO)		
+			if (var(VAR_RESULT) == 0) {
+				msgbox("Ah. That's alright.\pAnyway, if you ever want to learn how\nto catch POKéMON, just let me\lknow.", MSGBOX_AUTOCLOSE)
+				release
+				end
+			}
+			release
+			applymovement(3, TutGuy_Move_3)
+			waitmovement(0)
+			waitse
+			playse(SE_PIN)
+			waitse
+			delay(5)
+			//wally catch tut
+			special(SavePlayerParty)
+			special(PutZigzagoonInPlayerParty)
+			special(StartWallyTutorialBattle)
+			waitstate
+			lock
+			faceplayer
+			msgbox("That's how it's done!\pThey are easier to catch if you\nweaken them first.", MSGBOX_AUTOCLOSE)
+			special(LoadPlayerParty)
+			setflag(FLAG_TUTGUY_SCRIPT2)
+			releaseall
+			end	
+		}	
+		if (var(VAR_FACING) == 4) {
+			msgbox("{PLAYER}!\pWould you like me to demonstrate\nhow a POKéMON is caught?", MSGBOX_YESNO)		
+			if (var(VAR_RESULT) == 0) {
+				msgbox("Ah. That's alright.\pAnyway, if you ever want to learn how\nto catch POKéMON, just let me\lknow.", MSGBOX_AUTOCLOSE)
+				release
+				end
+			}
+			release
+			applymovement(3, TutGuy_Move_4)
+			waitmovement(0)
+			waitse
+			playse(SE_PIN)
+			waitse
+			delay(5)
+			//wally catch tut
+			special(SavePlayerParty)
+			special(PutZigzagoonInPlayerParty)
+			special(StartWallyTutorialBattle)
+			waitstate
+			lock
+			faceplayer
+			msgbox("That's how it's done!\pThey are easier to catch if you\nweaken them first.", MSGBOX_AUTOCLOSE)
+			special(LoadPlayerParty)
+			setflag(FLAG_TUTGUY_SCRIPT2)
+			releaseall
+			end	
+		}		
+	}
+	msgbox("Be careful out there, {PLAYER}.\pI hear there are some shady\ncharacters around.", MSGBOX_AUTOCLOSE)
+	release
+	end
+}
+
+movement TutGuy_Move_1 {
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_right
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_down
+	emote_exclamation_mark
+	step_end
+}
+
+movement TutGuy_Move_2 {
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_right
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_up
+	emote_exclamation_mark
+}
+
+movement TutGuy_Move_3 {
+	face_up
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_left
+	emote_exclamation_mark
+	step_end
+}
+
+movement TutGuy_Move_4 {
+	face_up
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_right
+	emote_exclamation_mark
+	step_end	
+}
+
+script Route49 {
+    lock
+	msgbox("ROUTE 49\n{RIGHT_ARROW} VALENCIA ISLAND", MSGBOX_SIGN)
+	release
+}
+
+script Route49Port {
+    lock
+	msgbox("VALENCIA ISLAND PORT", MSGBOX_SIGN)
+	release
+}
+
+script HoneyTreePlaceholder {
+    lock
+	msgbox("This tree looks like it can be\nslathered with HONEY! ", MSGBOX_SIGN)
+	release
+}
+
+script Route49Youngster {
+    lock
+	faceplayer
+	msgbox("Did you know what I saw the\nother day?\pPROF. IVY saved a RATICATE that\nwas burned by a startled VILEPLUME.\pIt was quite a scene!", MSGBOX_AUTOCLOSE) 
+}
+
+script Route49Camper {
+    lock
+	faceplayer
+	msgbox("I am waiting for POKéMON to come\nfor the HONEY I applied on that tree.\pI wonder if I will encounter any\nrare finds!", MSGBOX_AUTOCLOSE) 
+	release
+}
+
+script Route49Girl {
+    lock
+	faceplayer
+	msgbox("Are your POKéMON in good shape?\pIf they are low on health, you\nshould stay away from the grass.", MSGBOX_AUTOCLOSE) 
+	release
+}
+
+script Route49TrainerTips {
+    lock
+	msgbox("TRAINER TIPS\pWhen your POKéMON are running low on\nHit Points (HP), let them rest at a\lPOKéMON CENTER to restore it.", MSGBOX_SIGN)
+	release
+}

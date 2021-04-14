@@ -1,0 +1,189 @@
+mapscripts Route104_MapScripts {}
+
+script Route52Sign {
+    lock
+	msgbox("ROUTE 52\n{RIGHT_ARROW} PINKAN ISLAND", MSGBOX_SIGN)
+	release
+}
+
+script Whirlpool52 {
+	msgbox("It's a ferocious whirlpool!\nA POKéMON may be able to pass it.", MSGBOX_SIGN)
+	release
+}
+
+script Route52BlackBeltRyohei {
+	trainerbattle_single(TRAINER_KOJI_1, Route127_Text_KojiIntro, Route127_Text_KojiDefeat, Route127_Koji_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route127_Koji_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route127_Koji_CheckMatchCall2)
+	}
+	msgbox(Route127_Text_KojiPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route127_Koji_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route127_Koji_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route127_Koji_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_KOJI_1)
+	release
+	end
+}
+
+script Route127_Koji_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route127_Koji_RegisterMatchCall)
+	}
+	msgbox(Route127_Text_KojiPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route127_Koji_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_KOJI_1)
+	release
+	end
+}
+
+script Route127_Koji_Rematch {
+	trainerbattle_rematch(TRAINER_KOJI_1, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+
+
+
+
+
+
+
+
+
+script Route52SwimmerEllie {
+	trainerbattle_single(TRAINER_CARLEE, Route128_Text_CarleeIntro, Route128_Text_CarleeDefeat, Route128_Carlee_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route128_Carlee_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route128_Carlee_CheckMatchCall2)
+	}
+	msgbox(Route128_Text_CarleePostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route128_Carlee_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route128_Carlee_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route128_Carlee_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_CARLEE)
+	release
+	end
+}
+
+script Route128_Carlee_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route128_Carlee_RegisterMatchCall)
+	}
+	msgbox(Route128_Text_CarleePostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route128_Carlee_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_CARLEE)
+	release
+	end
+}
+
+script Route128_Carlee_Rematch {
+	trainerbattle_rematch(TRAINER_CARLEE, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+
+
+
+script Route52SwimmerJerry {
+	trainerbattle_single(TRAINER_RICHARD, Route131_Text_RichardIntro, Route131_Text_RichardDefeat, Route131_Richard_CheckMatchCall)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	if (var(VAR_RESULT) == 1) {
+		goto(Route131_Richard_Rematch)
+	}
+	setvar(VAR_0x8004, 318)
+	specialvar(VAR_RESULT, IsTrainerRegistered)
+	if (var(VAR_RESULT) == 0) {
+		goto(Route131_Richard_CheckMatchCall2)
+	}
+	msgbox(Route131_Text_RichardPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route131_Richard_CheckMatchCall {
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route131_Richard_RegisterShortMatchCall)
+	}
+	release
+	end
+}
+
+script Route131_Richard_RegisterShortMatchCall {
+	msgbox(Text_RegisterShortFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_RICHARD)
+	release
+	end
+}
+
+script Route131_Richard_CheckMatchCall2 {
+	if (flag(FLAG_HAS_MATCH_CALL) == TRUE) {
+		goto(Route131_Richard_RegisterMatchCall)
+	}
+	msgbox(Route131_Text_RichardPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route131_Richard_RegisterMatchCall {
+	msgbox(Text_RegisterFiller, MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_RICHARD)
+	release
+	end
+}
+
+script Route131_Richard_Rematch {
+	trainerbattle_rematch(TRAINER_RICHARD, Text_RematchIntroFiller, Text_RematchDefeatedFiller)
+	msgbox(Text_RematchDefeatedFillerPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
