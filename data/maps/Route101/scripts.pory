@@ -589,6 +589,7 @@ movement TutGuy_Move_4 {
 script Route49 {
     lock
 	msgbox("ROUTE 49\n{RIGHT_ARROW} VALENCIA ISLAND", MSGBOX_SIGN)
+	giveitem_std(ITEM_MAGOST_BERRY, 1, 0)
 	release
 }
 

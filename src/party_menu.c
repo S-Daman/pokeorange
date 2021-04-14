@@ -4237,7 +4237,7 @@ static bool8 IsHPRecoveryItem(u16 item)
 }
 
 static void GetMedicineItemEffectMessage(u16 item)
-{
+{	
     switch (GetItemEffectType(item))
     {
     case ITEM_EFFECT_CURE_POISON:
@@ -4299,6 +4299,9 @@ static void GetMedicineItemEffectMessage(u16 item)
         StringExpandPlaceholders(gStringVar4, gText_WontHaveEffect);
         break;
     }
+	if (item == ITEM_MAGOST_BERRY) {
+        StringExpandPlaceholders(gStringVar4, gText_PkmnTurnedPink);
+	}
 }
 
 static bool8 NotUsingHPEVItemOnShedinja(struct Pokemon *mon, u16 item)
@@ -6355,4 +6358,26 @@ void IsLastMonThatKnowsSurf(void)
         if (AnyStorageMonWithMove(move) != TRUE)
             gSpecialVar_Result = TRUE;
     }
+}
+
+void ItemUseCB_Pinkan(u8 taskId, TaskFunc task)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u16 item = gSpecialVar_ItemId;
+	
+    if (mon->box.isPink == FALSE) {
+        PlaySE(SE_KAIFUKU);
+		RemoveBagItem(item, 1);
+		mon->box.isPink = TRUE;
+        GetMonNickname(mon, gStringVar1);
+        GetMedicineItemEffectMessage(item);
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+        schedule_bg_copy_tilemap_to_vram(2);
+        gTasks[taskId].func = task;
+	}
+	else {
+        PlaySE(SE_SELECT);
+        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+		gTasks[taskId].func = task;
+	}
 }
