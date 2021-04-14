@@ -1218,13 +1218,13 @@ static void QueueAnimTiles_BattlePyramid_StatueShadow(u16 timer)
 static void QueueAnimTiles_Petalburg_Whirlpool(u16 timer)
 {
     u16 i = timer % 4;
-    AppendTilesetAnimToBuffer(gTilesetAnims_Petalburg_Whirlpool[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 256)), 0x3c0);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Petalburg_Whirlpool[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 256)), 0x200);
 }
 
 static void QueueAnimTiles_gTileset_Rustboro2_Whirlpool(u16 timer)
 {
     u16 i = timer % 4;
-    AppendTilesetAnimToBuffer(gTilesetAnims_Petalburg_Whirlpool[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 464)), 0x3c0);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Petalburg_Whirlpool[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 464)), 0x200);
 }
 
 static void BlendAnimPalette_BattleDome_FloorLights(u16 timer)
