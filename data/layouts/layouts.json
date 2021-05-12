@@ -207,7 +207,7 @@
             "id": "LAYOUT_ROUTE105",
             "name": "Route105_Layout",
             "primary_tileset": "gTileset_General",
-            "secondary_tileset": "gTileset_Dewford",
+            "secondary_tileset": "gTileset_Rustboro",
             "width": 49
         },
         {
