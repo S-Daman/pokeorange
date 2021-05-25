@@ -8,13 +8,8 @@
     "connections": [
         {
             "direction": "left",
-            "map": "MAP_DEWFORD_TOWN",
-            "offset": 0
-        },
-        {
-            "direction": "right",
-            "map": "MAP_ROUTE108",
-            "offset": 0
+            "map": "MAP_ROUTE106",
+            "offset": 1
         }
     ],
     "coord_events": [

@@ -39,9 +39,9 @@
     ],
     "connections": [
         {
-            "direction": "down",
-            "map": "MAP_DEWFORD_TOWN",
-            "offset": 60
+            "direction": "left",
+            "map": "MAP_ROUTE105",
+            "offset": 1
         }
     ],
     "coord_events": [
