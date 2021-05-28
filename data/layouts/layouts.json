@@ -123,12 +123,12 @@
         {
             "blockdata_filepath": "data/layouts/LavaridgeTown/map.bin",
             "border_filepath": "data/layouts/LavaridgeTown/border.bin",
-            "height": 20,
+            "height": 37,
             "id": "LAYOUT_LAVARIDGE_TOWN",
             "name": "LavaridgeTown_Layout",
             "primary_tileset": "gTileset_General",
-            "secondary_tileset": "gTileset_Lavaridge",
-            "width": 20
+            "secondary_tileset": "gTileset_Rustboro",
+            "width": 42
         },
         {
             "blockdata_filepath": "data/layouts/FallarborTown/map.bin",

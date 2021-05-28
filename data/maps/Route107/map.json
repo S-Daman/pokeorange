@@ -10,6 +10,11 @@
             "direction": "left",
             "map": "MAP_ROUTE106",
             "offset": 1
+        },
+        {
+            "direction": "up",
+            "map": "MAP_LAVARIDGE_TOWN",
+            "offset": 45
         }
     ],
     "coord_events": [
