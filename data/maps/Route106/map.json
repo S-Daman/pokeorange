@@ -42,6 +42,11 @@
             "direction": "left",
             "map": "MAP_ROUTE105",
             "offset": 1
+        },
+        {
+            "direction": "right",
+            "map": "MAP_ROUTE107",
+            "offset": 0
         }
     ],
     "coord_events": [

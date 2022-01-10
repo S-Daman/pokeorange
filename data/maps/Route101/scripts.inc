@@ -604,6 +604,7 @@ TutGuy_Move_4:
 Route49::
 	lock
 	msgbox Route49_Text_0, MSGBOX_SIGN
+	giveitem_std ITEM_MAGOST_BERRY, 1, 0
 	release
 	return
 
@@ -686,4 +687,4 @@ Route49Girl_Text_0:
 	.string "Are your POKéMON in good shape?\pIf they are low on health, you\nshould stay away from the grass.$"
 
 Route49TrainerTips_Text_0:
-	.string "TRAINER TIPS\pWhen your POKéMON are running low on\nHit Points (HP), let them rest at a\lPOKéMON CENTER to restore it.$"
+	.string "TRAINER TIPS\pWhen your POKéMON are running low on\nHit Points (HP), let them rest at a\lPOKéMON CENTER to restore them.$"
