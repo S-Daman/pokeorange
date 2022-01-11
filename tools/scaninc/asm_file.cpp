@@ -22,6 +22,7 @@
 #include <string>
 #include "scaninc.h"
 #include "asm_file.h"
+#include <stdexcept>
 
 AsmFile::AsmFile(std::string path)
 {

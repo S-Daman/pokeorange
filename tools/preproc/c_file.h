@@ -26,6 +26,7 @@
 #include <string>
 #include <memory>
 #include "preproc.h"
+#include <stdexcept>
 
 class CFile
 {

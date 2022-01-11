@@ -25,6 +25,7 @@
 #include "char_util.h"
 #include "utf8.h"
 #include "string_parser.h"
+#include <stdexcept>
 
 AsmFile::AsmFile(std::string filename) : m_filename(filename)
 {

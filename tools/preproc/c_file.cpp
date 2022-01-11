@@ -27,6 +27,7 @@
 #include "char_util.h"
 #include "utf8.h"
 #include "string_parser.h"
+#include <stdexcept>
 
 CFile::CFile(std::string filename) : m_filename(filename)
 {

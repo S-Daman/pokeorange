@@ -25,6 +25,7 @@
 #include <set>
 #include <memory>
 #include "scaninc.h"
+#include <stdexcept>
 
 class CFile
 {

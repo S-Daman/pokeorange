@@ -23,6 +23,7 @@
 
 #include <string>
 #include "scaninc.h"
+#include <stdexcept>
 
 enum class IncDirectiveType
 {

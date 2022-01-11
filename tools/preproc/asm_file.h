@@ -25,6 +25,7 @@
 #include <cstdint>
 #include <string>
 #include "preproc.h"
+#include <stdexcept>
 
 enum class Directive
 {

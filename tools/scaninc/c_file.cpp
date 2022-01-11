@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #include "c_file.h"
+#include <stdexcept>
 
 CFile::CFile(std::string path)
 {
