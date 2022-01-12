@@ -1238,7 +1238,6 @@ extern const u32 gMonFrontPic_Cyndaquil[];
 extern const u32 gMonPalette_Cyndaquil[];
 extern const u32 gMonBackPic_Cyndaquil[];
 extern const u32 gMonShinyPalette_Cyndaquil[];
-extern const u32 gMonPinkPalette_Cyndaquil[];
 extern const u32 gMonStillFrontPic_Cyndaquil[];
 extern const u8 gMonIcon_Cyndaquil[];
 extern const u8 gMonFootprint_Cyndaquil[];
