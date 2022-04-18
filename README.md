@@ -1,4 +1,19 @@
-# Pokémon Emerald
+Pia Carrot and the Orange team: For creating such an amazing hack and giving permission for this project
+Tainted: Countless help, especially spriting
+KDS: Intro code
+Shinny: Pinkan form code
+UltimaSoul and Shinny: Forms Pokedex button
+Wednesday and Tainted: Orange forms
+Wednesday: Bags
+Tainted and Farore: Sunburst Island map
+Wobb: Tiles
+Kalarie: Town Map draft
+Avara: Female protagonist draft
+Autie and AO Project: Music
+Mystelex: Ex-lead dev
+Vella: Current dev
+
+# Pokémon Orange GBA
 
 [![Build Status][travis-badge]][travis]
 
