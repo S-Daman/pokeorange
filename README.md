@@ -13,6 +13,9 @@
 - Autie and AO Project: Music
 - Mystelex: Ex-lead dev
 - Vella: Current lead dev
+- RyanTheMudkip and JoJo - Testing
+
+Please message me on Discord - Vella#7132 - if I missed anyone.
 
 # Pokémon Orange GBA
 
