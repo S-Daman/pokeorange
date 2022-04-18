@@ -12,7 +12,7 @@
 - Avara and Tetra: Female protagonist draft
 - Autie and AO Project: Music
 - Mystelex: Ex-lead dev
-- Vella: Current dev
+- Vella: Current lead dev
 
 # Pokémon Orange GBA
 
