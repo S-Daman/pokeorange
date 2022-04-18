@@ -6,6 +6,7 @@
 - Zavytar: Porting binary version maps
 - Wednesday, Tainted and Zavytar: Orange forms
 - Wednesday: Bags, refining Protagonist backsprites
+- ShinyDragonHunter: Pinkan Pokemon palettes
 - Tainted and Farore: Sunburst Island map
 - Wobb: Valencia Island map and shrub tile
 - Kalarie: Town Map draft
