@@ -3,12 +3,13 @@
 - KDS: Intro code
 - Shinny: Pinkan form code
 - UltimaSoul and Shinny: Forms Pokedex button
-- Wednesday and Tainted: Orange forms
-- Wednesday: Bags
+- Zavytar: Porting binary version maps
+- Wednesday, Tainted and Zavytar: Orange forms
+- Wednesday: Bags, refining Protagonist backsprites
 - Tainted and Farore: Sunburst Island map
-- Wobb: Tiles
+- Wobb: Valencia Island map and shrub tile
 - Kalarie: Town Map draft
-- Avara: Female protagonist draft
+- Avara and Tetra: Female protagonist draft
 - Autie and AO Project: Music
 - Mystelex: Ex-lead dev
 - Vella: Current dev
