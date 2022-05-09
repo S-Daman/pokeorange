@@ -34,11 +34,13 @@ The last thing we were working on was creating Pinkan palettes for every Pokemon
 
 
 # PLOT (NOT IDENTICAL TO PIA CARROT'S POKEMON ORANGE)
-# Future events:
+# Future events: 
+(I know the GS Ball was only in Crystal but I'm saying GSC/HGSS just to be consistent timeline wise)
+
 - Cora (rival) is from the future and is Kurt’s granddaughter who has grown up a bit since GSC/HGSS. The events in the future happen around the same time as BW
-- Some time between GSC/HGSS and BW, Kurt crafts the ulimate Poke Ball (GS Ball) from a pair of Rainbow and Silver Feathers which are from Ho-Oh and Lugia respectively
-- This ends up in a failure because the ball refuses to open/function like a normal Poke Ball
-- Kurt's theory is the GS Ball needs a 'key' to open and this key would need to be crafed from another pair of feathers, but he doesn't have any more feathers so he gives up and shelves the Ball. He was only able to obtain one of each in his Pokemon journey during his youth
+- Some time between GSC/HGSS and BW, after seeing the GS Ball in the Celebi event in GSC/HGSS, Kurt gets inspired by its design to craft the ulimate Poke Ball from a pair of Rainbow and Silver Feathers which are from Ho-Oh and Lugia respectively and names it the GS Ball
+- This ends up in a failure because the ball refuses to open/function like a normal Poke Ball (just like the original GS Ball!)
+- Kurt's theory is the GS Ball needs a 'key' to open and this key would need to be crafed from another pair of feathers, but he doesn't have any more feathers so he gives up and shelves the Ball. He was probably able to obtain one of each in his Pokemon journey during his youth from someone else (An Ecruteak priest maybe?)
 - He doesn't recognize the ball in GSC/HGSS when the player brings it to him because he has not made it yet
 - The GS Ball only opens after catching a mon if the trainer has these feathers since they’d be blessed as a trainer with pure heart by meeting these legends
 - Kurt really treasures the GS Ball and never let Cora touch it, so growing up, she is fascinated by the GS Ball and believes it contains something special
