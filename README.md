@@ -100,3 +100,8 @@ The last thing we were working on was creating Pinkan palettes for every Pokemon
 - Tracey heals up player before they battle Cora
 - Cora leaves for the future and left behind is a key item called Time Flute that apparently is said to summon Celebi (Time Flute is an item that appeared in Colosseum). If you take it to the right place (maybe a shrine in Murcott Island's forest), you can battle Celebi
 - GAME ENDS
+
+# How this fits into GAMEFREAK canon
+- Kurt is unaware of the GS Ball during GSC/HGSS when the player brings it to them (Celebi event)
+- In USUM, it was confirmed by a NPC that Kurt was the one who made the ball https://bulbapedia.bulbagarden.net/wiki/GS_Ball
+- So, Kurt MUST have made the GS Ball after GSC/HGSS (probably after witnessing/hearing about the Celebi event from the GSC/HGSS player) and this whole plot for Orange GBA was based on that as a starting point
