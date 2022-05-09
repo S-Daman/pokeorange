@@ -42,19 +42,18 @@ The last thing we were working on was creating Pinkan palettes for every Pokemon
 - This ends up in a failure because the ball refuses to open/function like a normal Poke Ball (just like the original GS Ball!)
 - Kurt's theory is the GS Ball needs a 'key' to open and this key would need to be crafed from another pair of feathers, but he doesn't have any more feathers so he gives up and shelves the Ball. He was probably able to obtain one of each in his Pokemon journey during his youth from someone else (An Ecruteak priest maybe?)
 - He doesn't recognize the ball in GSC/HGSS when the player brings it to him because he has not made it yet
-- The GS Ball only opens after catching a mon if the trainer has these feathers since they’d be blessed as a trainer with pure heart by meeting these legends
 - Kurt really treasures the GS Ball and never let Cora touch it, so growing up, she is fascinated by the GS Ball and believes it contains something special
 - She gets bored of simply making Poke Balls from Apricorns and eventually convinces Kurt to let her go on a journey to get more Rainbow and Silver feathers so they can truly craft the Ultimate Poke Ball together once she returns home
 - Kurt gives her the GS Ball as a good luck charm on her journey and she leaves
 - Cora goes to the shrine in Ilex Forest to pray, but the GS Ball causes a space/time distortion and Celebi appears 
 - In the time warp, the ball opens and Celebi gets captured in it
-- The GS Ball and Cora are spit out into the past (some time 6 months after RBY/FRLG) and get separated 
+- The GS Ball and Cora are spit out into the past on the Orange Islands (some time 6 months after RBY/FRLG) and get separated 
 
 # Right after RBY/FRLG:
 - Giovanni disbands Team Rocket and pays a visit to the Orange Team Rocket branch saying he’ll revive it one day
 - TR Orange branch (Leader: Sird, Admins: Orm and Carl https://bulbapedia.bulbagarden.net/wiki/The_Three_Beasts)
-- Orange branch wanted to overthrow Giovanni before during TR's prime. Since TR disbands, they need to postpone their plans and focus on the TR revival
-- Right before TR disbanded, they get their hands on the Legendary Beasts (Entei, Raikou and Suicune) since their leader (Sird) is really talented
+- Orange branch wanted to overthrow Giovanni before during TR's prime. Since TR disbanded, they need to postpone their plans and focus on the TR revival
+- Right before TR disbanded, they got their hands on the Legendary Beasts (Entei, Raikou and Suicune) since their leader (Sird) is really talented
 - They have technology to easily capture mons by turning them into stone (similar to Hunter J in the Pokemon DP anime)
 
 # Present:
@@ -66,37 +65,37 @@ The last thing we were working on was creating Pinkan palettes for every Pokemon
 - Sird needs Cora to craft the key and Cora needs TR to get the feathers
 - Cora also learns from Sird about where to find/what's needed to summon Ho-Oh/Lugia (Beasts for Ho-Oh and Elemental Orbs guarded by Legendary Bird trio - Zapdos, Articuno, Moltres for Lugia)
 - Sird plans to steal the key and the Ball once Cora crafts the key
-- Cora plans to escape once she gets the feathers because she knows TR will betray her
+- Cora plans to escape once she gets the feathers because she has a hunch TR will betray her
 
-# Climax (Takes place in the heights of the Canyon on Mandarin Island)
+# Climax (Takes place in the heights of the Canyon on Mandarin Island South)
 - The player runs into TR a few times on their journey. They learn how TR turns prized Pokemon into stone and exchanges them for money. They eventually meet Sird and learns how she plans to petrify Ho-Oh next
 - The player chases Sird to the TR hideout on Mandarin North Island, beats Orm who is guarding the entrance and gets the elevator key
-- The player reaches the lowest floor, but finds out Sird has already left. They learn about the Beasts and where she is headed next
+- The player reaches the lowest floor, but finds out Sird has already left. They learn about the Beasts and where she is headed next (Mandarin Island South Canyon)
 - By the time the player reaches the Canyon, TR has already summoned Ho-Oh using the Beasts
-- Cora is with TR and gets a Rainbow Feather(s)
-- Ho-Oh is turned into stone, but Beasts escape
+- Cora is with TR and gets the Rainbow Feather(s)
+- Ho-Oh is captured (turned into stone), but the Beasts escape in the moment
 - Cora has grown sick of TR and decides to betray them early since she can get the Silver feather herself as TR doesn't possess the Elemental Orbs
 - As soon as the player shows up, Cora switches sides and convinces them that she is also there to stop TR from capturing Ho-Oh (Maybe Sird will shout a few lines about betrayal to give a hint)
 - Cora apologizes to the player saying she only stole the GS Ball to keep it safe from TR's hands in the first place
 - Cora and Player team up to fight Sird and Sird loses
-- Sird (and TR) retreats telling us they are going after Lugia next (so Cora doesn't get the Silver Feather and is forced to hand over the GS Ball as her only chance to go back to the future)
+- Sird (and TR) retreats telling us they are going after Lugia next (so Cora doesn't get the Silver Feather and is forced to hand over the GS Ball)
 - Cora convinces the player to help her 'stop TR from having Lugia' and the player agrees to team up
 - Cora tells the player she 'overheard TR talking about their plans to capture Lugia' and knows about the Elemental Orbs and Lugia's location, so they leave for Shamouti Island
 - As they are exiting the Canyon, they run into Tracey (who is apparently just doing his research in the area) and explain the situation to him too on the way to Shamouti Island
 
 # Post game (takes place on Shamouti Island)
-- Player, Tracey and Cora reach Shamouti and split up and head to each Elemental Orb location to take on one TR admin each to confiscate the Orbs from them. Cora suggests to meet at the place where Sird will summon Lugia in case things go wrong (Lugia will show up in Cora's situation so it's a win for her anyway)
+- Player, Tracey and Cora reach Shamouti and split up and head to each Elemental Orb location to take on one TR admin each to confiscate the Orbs from them. Cora suggests to meet at the place where Sird will summon Lugia in case things go wrong (Lugia will show up in with all the Orbs in the right place so it's a win for Cora anyway)
 - The Legendary Birds are turned into stone by TR already so they don't interfere
 - Tracey vs Carl (Carl loses easily and Tracey gets the Fire Orb)
 - Cora vs Orm (Orm loses and she gets the Ice Orb)
-- Player vs Sird (Sird loses but tells player about Cora's plan and throws in some lies here and there to provoke the player)
+- Player vs Sird (Player gets the Electric Orb; Sird loses but tells player about Cora's plan and throws in some lies here and there about how she'll misuse Celebi to provoke the player)
 - Player goes to confront Cora (Sird follows)
 - Cora and Tracey are waiting for the player at the rendevouz point
-- When player reaches Cora, all the three Orbs are in the right location to summon Lugia, so Lugia shows up and Cora gets a Silver Feather(s)
+- When player reaches Cora, all the three Orbs are in the right location to summon Lugia, so Lugia shows up and Cora gets the Silver Feather(s)
 - Sird turns Lugia into stone and attacks Cora in last attempt, but Tracey and player intervene
 - Player defeats Sird. At this point TR is done for and player also manages to get the device Sird uses to turn Pokemon to stone (it also has a function to turn them back to normal, so you can later go and capture all the legendaries lol). Sird retreats and swears Team Rocket will be back
 - Tracey vs Cora (Tracey loses, but stalls Cora)
-- Cora quickly crafts the key before the player can stop her and Celebi comes out
+- Cora desperately strikes the GS Ball with the feathers before the player can stop her and Celebi comes out
 - Celebi shows visions of the past/future and Player learns about Cora's true goal and how Sird was lying
 - Things clear up and Cora requests one last battle as a rival before she returns to the future
 - Tracey heals up player before they battle Cora
